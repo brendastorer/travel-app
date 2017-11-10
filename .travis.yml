@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: Jx31RX8B2JD3IFHsie2qP+5HBu81+AfPL4Z2rxbavxojgRfHfvIDhGKWOwPRuXhmVEcwUgbMUz6JtkuVnEOP5YgV+99mtz2/gbkcbSJdoimwIt7seyMrAK94VFhJV81kQgT0O3jGXhID5/e5Rpiy/Cp/JW3g2+0DGQ5HNYNfDgFz38FVYl1ouZuWVnmodL7MbjyXh0O9Pk6h7/zI5qxUA4Zg1pG6kDE1vA0Uixba/Fkmc/HA5jIz29JJ2V6y9styyT3pK/nvnqbM0iqM7LOxVeB+C4wldDTDBY9Szn0FMIwYl1YZE7RvTIW2cFBI2054Bs9UYEPiap8zDvJUJlEYywcuSuEWQRe0GRKWAf9TjTo0gJuNlhhO5YdtDHRu327NICWMw3+IXIoFU9D8X19AjthYeurBZuAH0Dqz6cTN6/YhUmTPrrABctEvtyBX41PzzbTEtqzXmweL/9iB2kWwY8PA+v8q1jYF3WJz40XcNTkcjufDG6kq6jRKOxDjTdIwnLZGZEG+Di4ZuzSOzLdNlP5KboVxKIsGbOJsem2fiUWy4L7QZ7CBnvM/9PqlSIIn1R3c6EvQOiJDdtOPdnW/owNUr56NaJpwdjG0ssgjyp1pB/c0BmTzdyEyW71fclhjvXtuXsCw1Q+F1dg5Sb3MVS/B3evmfH1Mkf5rToHapsQ=
+  app: vast-brook-44418
+  on:
+    repo: brendastorer/travel-app
