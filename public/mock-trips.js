@@ -1,12 +1,12 @@
 const MOCK_TRIPS_LIST = {
-  "tripsAbstracts":[
+  "trips":[
     {
       "id": "1111",
       "title": "Scotland 2015",
       "description": "Gluten-free pabst mumblecore fixie. Subway tile man bun dreamcatcher green juice viral pabst.",
       "public": true,
-      "startDate": "20150620",
-      "endDate": "20150624",
+      "startDate": "20150621",
+      "endDate": "20150625",
       "tripUrl": "/trips/1/scotland-2015",
       "coverPhoto": "https://media-cdn.tripadvisor.com/media/photo-s/0f/4b/02/72/dunnottar-castle-aberdeenshire.jpg",
       "interests": [
@@ -14,88 +14,195 @@ const MOCK_TRIPS_LIST = {
         "hiking", 
         "history"
       ],
-      "user": {
-        "id": "1",
-        "fullName": "Brenda Storer",
-        "profileUrl": "/1"
-      },
-      "locations": [
+      "days": [
         {
-          "name": "Edinburgh",
-          "country": "Scotland",
+          "id": "111111",
+          "calendarDate": "20150621",
+          "coverPhoto": "",
+          "diaryEntry": "",
+          "weather": "",
+          "travelDetails": "United 209 Depart 9:09pm JFK Arrive next day 9:00am EDI",
+          "locations": ""
         },
         {
-          "name": "Speyside",
-          "country": "Scotland"
+          "id": "222222",
+          "calendarDate": "20150622",
+          "coverPhoto": "",
+          "diaryEntry": "",
+          "weather": "",
+          "travelDetails": "",
+          "locations": [
+            {
+              "id": "111",
+              "name": "Edinburgh",
+              "country": "Scotland",
+              "sites": [
+                {
+                  "id": "11111",
+                  "name": "Arthur's Seat",
+                  "address": "",
+                  "type": "historic site",
+                  "rating": 3,
+                  "ratingComment": "Amazing view!",
+                  "media": [
+                    {
+                      "id": "11",
+                      "file": "https://media-cdn.tripadvisor.com/media/photo-s/0f/4a/fe/6e/edinburgh-from-calton.jpg",
+                      "caption": "",
+                      "type": "jpg",
+                      "size": "24kb"
+                    }
+                  ],
+                },
+                {
+                  "id": "22222",
+                  "name": "Whiski Rooms",
+                  "address": "",
+                  "type": "restaurant/bar",
+                  "rating": 2,
+                  "ratingComment": "Great whiskey selection with helpful staff.",
+                  "media": [
+                    {
+                      "id": "33",
+                      "file": "https://media-cdn.tripadvisor.com/media/photo-s/0f/4a/fe/6e/edinburgh-from-calton.jpg",
+                      "caption": "",
+                      "type": "jpg",
+                      "size": "24kb"
+                    },
+                    {
+                      "id": "44",
+                      "file": "https://www.walkhighlands.co.uk/lothian/1_2/1_2_2l.JPG",
+                      "caption": "",
+                      "type": "jpg",
+                      "size": "24kb"
+                    }
+                  ],
+                },
+                {
+                  "id": "33333",
+                  "name": "The Inn Place",
+                  "address": "",
+                  "type": "lodging",
+                  "rating": 3,
+                  "ratingComment": "Lovely little hotel in a convenient location."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "333333",
+          "calendarDate": "20150623",
+          "coverPhoto": "https://www.walkhighlands.co.uk/lothian/1_2/1_2_2l.JPG",
+          "diaryEntry": "",
+          "weather": "",
+          "travelDetails": "",
+          "locations": [
+            {
+              "id": "111",
+              "name": "Edinburgh",
+              "country": "Scotland",
+              "sites": [
+                {
+                  "id": "22222",
+                  "name": "The Albanach",
+                  "address": "",
+                  "type": "restaurant/bar",
+                  "rating": 3,
+                  "ratingComment": "Probably the best whiskey selection in the city!"
+                },
+                {
+                  "id": "33333",
+                  "name": "The Inn Place",
+                  "address": "",
+                  "type": "lodging",
+                  "rating": 3,
+                  "ratingComment": "Lovely little hotel in a convenient location."
+                }
+              ]
+            },
+            {
+              "id": "222",
+              "name": "Speyside",
+              "country": "Scotland",
+              "sites": [
+                {
+                  "id": "44444",
+                  "name": "Glenfarclas Distillery",
+                  "address": "Ballindalloch",
+                  "type": "",
+                  "rating": 2,
+                  "ratingComment": ""
+                },
+                {
+                  "id": "55555",
+                  "name": "Craigellachie Hotel",
+                  "address": "",
+                  "type": "lodging",
+                  "rating": 2,
+                  "ratingComment": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "444444",
+          "calendarDate": "20150624",
+          "coverPhoto": "https://www.walkhighlands.co.uk/lothian/1_2/1_2_2l.JPG",
+          "diaryEntry": "",
+          "weather": "",
+          "travelDetails": "",
+          "locations": [
+            {
+              "id": "222",
+              "name": "Speyside",
+              "country": "Scotland",
+              "sites": [
+                {
+                  "id": "44444",
+                  "name": "Glenlivet Distillery",
+                  "address": "",
+                  "type": "",
+                  "rating": 1,
+                  "ratingComment": ""
+                },
+                {
+                  "id": "55555",
+                  "name": "Craigellachie Hotel",
+                  "address": "",
+                  "type": "lodging",
+                  "rating": 2,
+                  "ratingComment": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "555555",
+          "calendarDate": "20150625",
+          "coverPhoto": "https://www.walkhighlands.co.uk/lothian/1_2/1_2_2l.JPG",
+          "diaryEntry": "",
+          "weather": "",
+          "travelDetails": "United 489 Depart 2:00pm EDI Arrive 7:23pm JFK",
+          "locations": [
+            {
+              "id": "111",
+              "name": "Edinburgh",
+              "country": "Scotland",
+              "sites": ""
+            }
+          ]
         }
-      ]
-    },
-    {
-      "id": "2222",
-      "title": "New York 2017",
-      "description": "Neutra try-hard put a bird on it man bun, flannel sriracha occupy crucifix locavore succulents af vice.",
-      "public": true,
-      "startDate": "20170830",
-      "endDate": "20170905",
-      "tripUrl": "/trips/1/new-york-2017",
-      "coverPhoto": "https://media.architecturaldigest.com/photos/5699802bc6772b7614567435/2:1/w_2560/new-york-city-guide.jpg",
-      "interests": [
-        "urban", "foodie", "museums"
       ],
       "user": {
         "id": "1",
-        "fullName": "Brenda Storer",
-        "profileUrl": "/1"
-      },
-      "locations": [
-        {
-          "name": "New York City",
-          "country": "USA"
-        }
-      ]
+        "firstName": "Brenda",
+        "lastName": "Storer",
+        "hometown": "New York City",
+        "profilePhoto": "http://placebeyonce.com/100-100"
+      }
     }
   ]
 };
-
-function getTrips(callbackFn) {
-  setTimeout(function(){ 
-    callbackFn(MOCK_TRIPS_LIST)
-  }, 100);
-}
-
-function renderTripList(trip) {
-  const startDate = moment(trip.startDate).format('LL');
-  const endDate = moment(trip.endDate).format('LL');
-  const tripTemplate = (
-  `
-    <li class="trips__trip">
-      <a href="${trip.tripUrl}" class="trips__trip-title">
-        <img src="${trip.coverPhoto}" alt="" class="trips__trip-photo">
-        <h2>${trip.title}</h2>
-      </a>
-      <a href="${trip.user.profileUrl}">
-        By ${trip.user.fullName}
-      </a>
-      <p>${startDate} &ndash; ${endDate}</p>
-      <p class="trips__trip-description">${trip.description}</p>
-      <!-- list of locations -->
-      <!-- list of interests -->
-    </li>
-  `);
-  
-  $(".js-trips-list").append(tripTemplate);
-}
-
-function displayTrips(data) {
-  data.tripsAbstracts.map(function(trip) {
-    renderTripList(trip);
-  });
-}
-
-function getAndDisplayTrips() {
-  getTrips(displayTrips);
-}
-
-$(function() {
-  getAndDisplayTrips();
-})

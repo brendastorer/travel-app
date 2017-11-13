@@ -1,0 +1,42 @@
+// Typography
+@import url("https://fonts.googleapis.com/css?family=Arapey:400,400i|Lato:300,400,700");
+$base-font-family: "Arapey", georgia, serif;
+$heading-font-family: "Lato", helvetica, sans-serif;
+
+// Line height
+$base-line-height: 1.6;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 5px;
+$base-z-index: 0;
+
+// Colors
+$teal: #a5d6d8;
+$beige: #f6ede8;
+$tan: #e7d0ba;
+$purple: #9a8194;
+$black: #111;
+$white: #fff;
+
+// Font Colors
+$base-font-color: $black;
+$soft-accent-color: $beige;
+$strong-accent-color: $teal;
+
+// Border
+$base-border-color: $tan;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$viewport-background-color: #fff;
+
+// Focus
+$focus-outline-color: $strong-accent-color;
+$focus-outline-width: 3px;
+$focus-outline: $focus-outline-width solid $focus-outline-color;
+$focus-outline-offset: 2px;
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;

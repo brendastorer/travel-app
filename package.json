@@ -4,19 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start-server": "concurrently \"nodemon server.js\" \"npm run sass\"",
+    "sass": "node-sass --output-style compressed scss/app.scss public/css/app.css",
     "test": "mocha --exit"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "autoprefixer": "^7.1.6",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "morgan": "^1.9.0",
+    "node-sass": "^4.6.1",
     "uuid": "^3.1.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-http": "^3.0.0",
+    "concurrently": "^3.5.0",
     "mocha": "^4.0.1"
   }
 }
