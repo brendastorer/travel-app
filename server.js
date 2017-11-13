@@ -6,7 +6,7 @@ app.use(morgan('common'));
 app.use(express.static('public'));
 
 // routes
-const tripsRouter = require("./tripsRouter");
+const tripsRouter = require("./routers/tripsRouter");
 app.use('/trips', tripsRouter);
 
 let server;

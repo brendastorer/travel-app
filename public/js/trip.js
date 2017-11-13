@@ -1,4 +1,4 @@
-$.getScript("mock-trips.js");
+$.getScript("js/mock-trips.js");
 
 function getTrip(callbackFn) {
   setTimeout(function(){ 

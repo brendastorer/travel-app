@@ -3,7 +3,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
-const {Trips} = require('./models');
+const {Trips} = require('../models/tripsModel');
 
 Trips.create('Scotland 2017', 'My second trip to Scotland');
 
