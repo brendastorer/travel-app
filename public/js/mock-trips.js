@@ -14,11 +14,34 @@ const MOCK_TRIPS_LIST = {
         "hiking", 
         "history"
       ],
+      "media": [
+        {
+          "id": "11",
+          "file": "https://media-cdn.tripadvisor.com/media/photo-s/0f/4a/fe/6e/edinburgh-from-calton.jpg",
+          "caption": "",
+          "type": "jpg",
+          "size": "24kb"
+        },
+        {
+          "id": "22",
+          "file": "https://media-cdn.tripadvisor.com/media/photo-s/0f/4a/fe/6e/edinburgh-from-calton.jpg",
+          "caption": "",
+          "type": "jpg",
+          "size": "24kb"
+        },
+        {
+          "id": "33",
+          "file": "https://www.walkhighlands.co.uk/lothian/1_2/1_2_2l.JPG",
+          "caption": "",
+          "type": "jpg",
+          "size": "24kb"
+        }
+      ],
       "days": [
         {
           "id": "111111",
           "calendarDate": "20150621",
-          "coverPhoto": "",
+          "coverPhoto": "https://www.walkhighlands.co.uk/lothian/1_2/1_2_2l.JPG",
           "diaryEntry": "",
           "weather": "",
           "travelDetails": "United 209 Depart 9:09pm JFK Arrive next day 9:00am EDI",
@@ -43,16 +66,7 @@ const MOCK_TRIPS_LIST = {
                   "address": "",
                   "type": "historic site",
                   "rating": 3,
-                  "ratingComment": "Amazing view!",
-                  "media": [
-                    {
-                      "id": "11",
-                      "file": "https://media-cdn.tripadvisor.com/media/photo-s/0f/4a/fe/6e/edinburgh-from-calton.jpg",
-                      "caption": "",
-                      "type": "jpg",
-                      "size": "24kb"
-                    }
-                  ],
+                  "ratingComment": "Amazing view!"
                 },
                 {
                   "id": "22222",
@@ -61,22 +75,6 @@ const MOCK_TRIPS_LIST = {
                   "type": "restaurant/bar",
                   "rating": 2,
                   "ratingComment": "Great whiskey selection with helpful staff.",
-                  "media": [
-                    {
-                      "id": "33",
-                      "file": "https://media-cdn.tripadvisor.com/media/photo-s/0f/4a/fe/6e/edinburgh-from-calton.jpg",
-                      "caption": "",
-                      "type": "jpg",
-                      "size": "24kb"
-                    },
-                    {
-                      "id": "44",
-                      "file": "https://www.walkhighlands.co.uk/lothian/1_2/1_2_2l.JPG",
-                      "caption": "",
-                      "type": "jpg",
-                      "size": "24kb"
-                    }
-                  ],
                 },
                 {
                   "id": "33333",
