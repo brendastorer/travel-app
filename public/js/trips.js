@@ -9,17 +9,26 @@ function getTrips(callbackFn) {
 function renderTripList(trip) {
   const startDate = moment(trip.startDate).format('LL');
   const endDate = moment(trip.endDate).format('LL');
+  const interests = trip.interests.map(function(interest) {
+    return interest;
+  });
+
   const tripTemplate = (
   `
     <li class="trips-list__trip">
       <a href="${trip.tripUrl}" class="trips-list__link">
         <img src="${trip.coverPhoto}" alt="" class="trips-list__photo">
-        <h2 class="trips-list__title">${trip.title}</h2>
-        <span>By ${trip.user.firstName} ${trip.user.lastName}, ${trip.user.hometown}</span>
-        <p>${startDate} &ndash; ${endDate}</p>
-        <p class="trips-list__description">${trip.description}</p>
-        <!-- list of locations -->
-        <!-- list of interests -->
+        <article class="trips-list__info">
+          <header class="trips-list__header">
+            <h2 class="trips-list__title">${trip.title}</h2>
+            <img class="user-profile__photo" src="${trip.user.profilePhoto}" alt="By ${trip.user.firstName} ${trip.user.lastName}">
+          </header>
+          <p>${startDate} &ndash; ${endDate}</p>
+          <p class="trips-list__description">${trip.description}</p>
+          <div>
+            ${interests}
+          </div>
+        </article>
       </a>
     </li>
   `);

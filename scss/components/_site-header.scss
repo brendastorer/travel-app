@@ -1,7 +1,15 @@
 .site-header {
-  padding: 1rem;
+  padding: 2rem 2rem 0;
 }
 
-.site-header h1 {
+.site-header__logo {
+  fill: $base-font-color;
+}
+
+.site-header__title {
+  display: inline-block;
+  font-family: $handwritten-font-family;
   font-size: 2rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }

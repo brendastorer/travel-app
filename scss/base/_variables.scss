@@ -1,10 +1,11 @@
 // Typography
 @import url("https://fonts.googleapis.com/css?family=Arapey:400,400i|Lato:300,400,700");
 $base-font-family: "Arapey", georgia, serif;
-$heading-font-family: "Lato", helvetica, sans-serif;
+$alt-font-family: "Lato", helvetica, sans-serif;
+$handwritten-font-family: "Madelyn-Regular", georgia, serif;
 
 // Line height
-$base-line-height: 1.6;
+$base-line-height: 1.2;
 $heading-line-height: 1.2;
 
 // Other Sizes
@@ -24,6 +25,10 @@ $base-font-color: $black;
 $soft-accent-color: $beige;
 $strong-accent-color: $teal;
 
+// Font Sizes
+$base-font-size: 1rem;
+$small-font-size: 0.85rem;
+
 // Border
 $base-border-color: $tan;
 $base-border: 1px solid $base-border-color;
@@ -40,3 +45,7 @@ $focus-outline-offset: 2px;
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
+
+// Media Queries
+$large-screen-and-up: 900px;
+$medium-screen-and-up: 500px;

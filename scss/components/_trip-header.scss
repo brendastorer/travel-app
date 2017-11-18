@@ -1,0 +1,13 @@
+.trip-header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.trip-header__title {
+  font-size: 2.5rem;
+}
+
+.trip-header__info {
+  align-self: end;
+  padding: 1rem 2rem;
+}

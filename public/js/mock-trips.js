@@ -41,19 +41,23 @@ const MOCK_TRIPS_LIST = {
         {
           "id": "111111",
           "calendarDate": "20150621",
-          "coverPhoto": "https://www.walkhighlands.co.uk/lothian/1_2/1_2_2l.JPG",
           "diaryEntry": "",
-          "weather": "",
           "travelDetails": "United 209 Depart 9:09pm JFK Arrive next day 9:00am EDI",
+          "photos": [
+            {
+              "id": "11",
+              "file": "https://media-cdn.tripadvisor.com/media/photo-s/0f/4a/fe/6e/edinburgh-from-calton.jpg",
+              "caption": ""
+            }
+          ],
           "locations": ""
         },
         {
           "id": "222222",
           "calendarDate": "20150622",
-          "coverPhoto": "",
           "diaryEntry": "",
-          "weather": "",
           "travelDetails": "",
+          "photos": "",
           "locations": [
             {
               "id": "111",
@@ -91,10 +95,9 @@ const MOCK_TRIPS_LIST = {
         {
           "id": "333333",
           "calendarDate": "20150623",
-          "coverPhoto": "https://www.walkhighlands.co.uk/lothian/1_2/1_2_2l.JPG",
           "diaryEntry": "",
-          "weather": "",
           "travelDetails": "",
+          "photos": "",
           "locations": [
             {
               "id": "111",
@@ -147,10 +150,9 @@ const MOCK_TRIPS_LIST = {
         {
           "id": "444444",
           "calendarDate": "20150624",
-          "coverPhoto": "https://www.walkhighlands.co.uk/lothian/1_2/1_2_2l.JPG",
           "diaryEntry": "",
-          "weather": "",
           "travelDetails": "",
+          "photos": "",
           "locations": [
             {
               "id": "222",
@@ -180,10 +182,9 @@ const MOCK_TRIPS_LIST = {
         {
           "id": "555555",
           "calendarDate": "20150625",
-          "coverPhoto": "https://www.walkhighlands.co.uk/lothian/1_2/1_2_2l.JPG",
           "diaryEntry": "",
-          "weather": "",
           "travelDetails": "United 489 Depart 2:00pm EDI Arrive 7:23pm JFK",
+          "photos": "",
           "locations": [
             {
               "id": "111",
@@ -199,7 +200,7 @@ const MOCK_TRIPS_LIST = {
         "firstName": "Brenda",
         "lastName": "Storer",
         "hometown": "New York City",
-        "profilePhoto": "http://placebeyonce.com/100-100"
+        "profilePhoto": "http://placebeyonce.com/80-80"
       }
     }
   ]
