@@ -1,5 +1,3 @@
-$.getScript("js/mock-trips.js");
-
 function getTrips(callbackFn) {
   setTimeout(function(){ 
     callbackFn(MOCK_TRIPS_LIST)

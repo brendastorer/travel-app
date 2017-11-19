@@ -6,25 +6,30 @@
   "scripts": {
     "start": "nodemon ./server.js",
     "test": "mocha --exit",
-    "watch-js": "nodemon -e js --watch public/js -x \"npm run build-js\"",
-    "watch-sass": "nodemon -e scss --watch public/css -x \"npm run build-sass\"",
-    "watch": "npm run watch-js && npm run watch-sass",
     "watch-jscss": "gulp watch",
-    "start-local-server": "npm-run-all --parallel watch-jscss start"
+    "start-server": "npm-run-all --parallel watch-jscss start"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "moment": "^2.19.2",
     "morgan": "^1.9.0",
     "uuid": "^3.1.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "chai": "^4.1.2",
     "chai-http": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
     "mocha": "^4.0.1",
     "node-sass": "^4.7.1",
     "nodemon": "^1.12.1",

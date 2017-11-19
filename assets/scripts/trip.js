@@ -1,5 +1,3 @@
-$.getScript("js/mock-trips.js");
-
 function getTrip(callbackFn) {
   setTimeout(function(){ 
     callbackFn(MOCK_TRIPS_LIST)
@@ -42,7 +40,7 @@ function renderCalendarDays(day) {
 
   const tripCalendarTemplate = (
   `
-    <a href="#" class="trip-calendar__day">
+    <a href="#" class="trip-calendar__day" data-day="${day.calendarDate}">
       <span class="heading__small-caps">
         ${dayOfWeek}
       </span>
