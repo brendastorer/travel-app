@@ -6,45 +6,56 @@ function getTrip(callbackFn) {
   }, 100);
 }
 
-function renderTrip(trip) {
-  const dayOfWeek = moment(trip.days[0].calendarDate).format('dddd');
-  const formattedDate = moment(trip.days[0].calendarDate).format('MMM D');
-  const interests = trip.interests.map(function(interest) {
-    return interest;
-  });
+// Pulling in the first trip out of mock data
+function firstTrip(data) {
+  selectedTrip = data.trips[0];
+}
 
+function renderTripHeader(trip) {
   const tripHeaderTemplate = (
   `
-    <div class="trip-header__photos">
-      <img src="${trip.days[0].photos[0].file}" alt="">
+    <h2 class="heading__x-large">${trip.title}</h2>
+    <div class="user-profile">
+      <img src="${trip.user.profilePhoto}" class="user-profile__photo" alt="">
+      <p class="user-profile__name">
+        By ${trip.user.firstName} ${trip.user.lastName}, ${trip.user.hometown}
+      </p>
     </div>
-    <div class="trip-header__info">
-      <h2 class="heading__x-large">${trip.title}</h2>
-      <div class="user-profile">
-        <img src="${trip.user.profilePhoto}" class="user-profile__photo" alt="">
-        <p class="user-profile__name">
-          By ${trip.user.firstName} ${trip.user.lastName}, ${trip.user.hometown}
-        </p>
-      </div>
-      <p class="trip__description">${trip.description}</p>
-      <div>
-        ${interests}
-      </div>
-    </div>
+    <p class="trip__description">${trip.description}</p>
   `);
+
+  $(".js-trip-info").prepend(tripHeaderTemplate);
+}
+
+function renderTripInterests(interest) {
+  const tripInterestsTemplate = (
+  `
+    <span class="tag">${interest}</span>
+  `);
+
+  $(".js-trip-interests").append(tripInterestsTemplate);
+}
+
+function renderCalendarDays(day) {
+  const dayOfWeek = moment(day.calendarDate).format('dddd');
+  const formattedDate = moment(day.calendarDate).format('MMM D');
 
   const tripCalendarTemplate = (
   `
-    <div class="trip-calendar__day">
+    <a href="#" class="trip-calendar__day">
       <span class="heading__small-caps">
         ${dayOfWeek}
       </span>
       <span class="trip-calendar__date">
         ${formattedDate}
       </span>
-    </div>
+    </a>
   `);
 
+  $(".js-trip-calendar").append(tripCalendarTemplate);
+}
+
+function renderTripDay(trip) {
   const tripDayTemplate = (
   `
     <aside class="trip-day__sidebar">
@@ -75,20 +86,51 @@ function renderTrip(trip) {
     </article>
   `);
 
-  $(".js-trip-header").append(tripHeaderTemplate);
-  $(".js-trip-calendar").append(tripCalendarTemplate);
   $(".js-trip-day").append(tripDayTemplate);
 }
 
-function displayTrip(data) {
-  const selectedTrip = data.trips[0];
-  renderTrip(selectedTrip);
+function renderTripDayPhotos(trip) {
+  const tripDayPhotosTemplate = (
+  `
+    <img src="${trip.days[0].photos[0].file}" alt="">
+  `);
+
+  $(".js-trip-day-photos").append(tripDayPhotosTemplate);
+}
+
+function displayTripHeader(data) {
+  renderTripHeader(selectedTrip);
+}
+
+function displayTripInterests(data) {
+  selectedTrip.interests.map(function(interest) {
+    renderTripInterests(interest);
+  });
+}
+
+function displayCalendarDays(data) {
+  selectedTrip.days.map(function(day) {
+    renderCalendarDays(day);
+  });
+}
+
+function displayTripDay(data) {
+  renderTripDay(selectedTrip);
+}
+
+function displayTripDayPhotos(data) {
+  renderTripDayPhotos(selectedTrip);
 }
 
 function getAndDisplayTrip() {
-  getTrip(displayTrip);
+  getTrip(firstTrip);
+  getTrip(displayTripDay);
+  getTrip(displayTripDayPhotos);
+  getTrip(displayTripHeader);
+  getTrip(displayTripInterests);
+  getTrip(displayCalendarDays);
 }
 
 $(function() {
   getAndDisplayTrip();
-})
+});

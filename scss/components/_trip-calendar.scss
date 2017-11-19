@@ -8,7 +8,13 @@
 
 .trip-calendar__day {
   background-color: $soft-accent-color;
+  border-bottom: 0;
+  display: block;
   padding: 0.5em;
+
+  &:hover {
+    background-color: $strong-accent-color;
+  }
 }
 
 .trip-calendar__date {

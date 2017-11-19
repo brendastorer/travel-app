@@ -11,8 +11,10 @@
 }
 
 .heading__small-caps {
+  display: block;
   font-family: $alt-font-family;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   letter-spacing: 0.1em;
+  margin-bottom: 0.5em;
   text-transform: uppercase;
 }
