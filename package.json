@@ -4,24 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-server": "concurrently \"nodemon server.js\" \"npm run sass\"",
-    "sass": "node-sass --output-style compressed scss/app.scss public/css/app.css",
-    "test": "mocha --exit"
+    "start": "nodemon ./server.js",
+    "test": "mocha --exit",
+    "watch-js": "nodemon -e js --watch public/js -x \"npm run build-js\"",
+    "watch-sass": "nodemon -e scss --watch public/css -x \"npm run build-sass\"",
+    "watch": "npm run watch-js && npm run watch-sass",
+    "watch-jscss": "gulp watch",
+    "start-local-server": "npm-run-all --parallel watch-jscss start"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "autoprefixer": "^7.1.6",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "morgan": "^1.9.0",
-    "node-sass": "^4.6.1",
     "uuid": "^3.1.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-http": "^3.0.0",
-    "concurrently": "^3.5.0",
-    "mocha": "^4.0.1"
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "mocha": "^4.0.1",
+    "node-sass": "^4.7.1",
+    "nodemon": "^1.12.1",
+    "npm-run-all": "^4.1.2"
   }
 }
