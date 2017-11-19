@@ -1,0 +1,18 @@
+.trip-calendar {
+  background-color: $off-white;
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.trip-calendar__day {
+  background-color: $soft-accent-color;
+  padding: 0.5em;
+}
+
+.trip-calendar__date {
+  display: block;
+  font-size: 1.3em;
+  margin-bottom: 0.25em;
+}

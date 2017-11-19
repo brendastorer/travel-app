@@ -1,0 +1,13 @@
+.modal__link {
+  border: $base-border;
+  border-radius: 1em;
+  display: inline-block;
+  line-height: $base-line-height;
+  margin-top: 0.5rem;
+  padding: 0.2em 0.8em 0.3em;
+
+  &:hover {
+    background-color: $strong-accent-color;
+    border-color: $strong-accent-color;
+  }
+}

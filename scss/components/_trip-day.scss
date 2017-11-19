@@ -1,0 +1,20 @@
+.trip-day {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 300px minmax(auto, 70ch) 1fr;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.trip-day__sidebar {
+  grid-column: 2 / 3;
+}
+
+.trip-day__sidebar-section {
+  margin-bottom: 3rem;
+}
+
+.trip-day__diary {
+  grid-column: 3 / 4;
+  line-height: $base-line-height;
+}

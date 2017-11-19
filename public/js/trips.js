@@ -20,7 +20,7 @@ function renderTripList(trip) {
         <img src="${trip.coverPhoto}" alt="" class="trips-list__photo">
         <article class="trips-list__info">
           <header class="trips-list__header">
-            <h2 class="trips-list__title">${trip.title}</h2>
+            <h2 class="heading__large">${trip.title}</h2>
             <img class="user-profile__photo" src="${trip.user.profilePhoto}" alt="By ${trip.user.firstName} ${trip.user.lastName}">
           </header>
           <p>${startDate} &ndash; ${endDate}</p>

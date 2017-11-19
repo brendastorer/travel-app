@@ -26,7 +26,7 @@ a {
   border-bottom: 2px solid $strong-accent-color;
   color: $base-font-color;
   text-decoration: none;
-  transition: border $base-duration $base-timing;
+  transition: all $base-duration $base-timing;
 
   &:hover {
     border-bottom-color: transparent;

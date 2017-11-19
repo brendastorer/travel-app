@@ -41,7 +41,7 @@ const MOCK_TRIPS_LIST = {
         {
           "id": "111111",
           "calendarDate": "20150621",
-          "diaryEntry": "",
+          "diaryEntry": "Truffaut austin bitters twee. Fixie pabst gentrify, beard pug iPhone leggings lyft thundercats master cleanse jean shorts prism shaman craft beer poutine. Cold-pressed yuccie YOLO williamsburg cronut jianbing before they sold out man braid. Lomo yuccie shoreditch taxidermy chartreuse. Man braid gentrify seitan fam YOLO. Cray tumblr letterpress pok pok brunch. Enamel pin retro woke godard aesthetic you probably haven't heard of them umami cronut. Raclette subway tile meh iPhone mustache pinterest cray offal wayfarers messenger bag. Venmo live-edge leggings scenester echo park, activated charcoal pickled vape. Ethical fingerstache gentrify farm-to-table.",
           "travelDetails": "United 209 Depart 9:09pm JFK Arrive next day 9:00am EDI",
           "photos": [
             {
@@ -50,7 +50,39 @@ const MOCK_TRIPS_LIST = {
               "caption": ""
             }
           ],
-          "locations": ""
+          "locations": [
+            {
+              "id": "111",
+              "name": "Edinburgh",
+              "country": "Scotland",
+              "sites": [
+                {
+                  "id": "11111",
+                  "name": "Arthur's Seat",
+                  "address": "",
+                  "type": "historic site",
+                  "rating": 3,
+                  "ratingComment": "Amazing view!"
+                },
+                {
+                  "id": "22222",
+                  "name": "Whiski Rooms",
+                  "address": "",
+                  "type": "restaurant/bar",
+                  "rating": 2,
+                  "ratingComment": "Great whiskey selection with helpful staff.",
+                },
+                {
+                  "id": "33333",
+                  "name": "The Inn Place",
+                  "address": "20-30 Cockburn Street, Edinburgh",
+                  "type": "lodging",
+                  "rating": 3,
+                  "ratingComment": "Lovely little hotel in a convenient location."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "222222",
@@ -83,7 +115,7 @@ const MOCK_TRIPS_LIST = {
                 {
                   "id": "33333",
                   "name": "The Inn Place",
-                  "address": "",
+                  "address": "20-30 Cockburn Street, Edinburgh",
                   "type": "lodging",
                   "rating": 3,
                   "ratingComment": "Lovely little hotel in a convenient location."
