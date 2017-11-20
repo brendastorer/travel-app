@@ -5,6 +5,19 @@ var app = express();
 app.use(morgan('common'));
 app.use(express.static('public'));
 
+// views
+app.get('/', (req, res) => {
+  res.status(200).sendFile(__dirname + '/views/index.html');
+});
+
+app.get('/trips', (req, res) => {
+  res.status(200).sendFile(__dirname + '/views/trips.html');
+});
+
+app.get('/trip', (req, res) => {
+  res.status(200).sendFile(__dirname + '/views/trip.html');
+});
+
 // routes
 const tripsRouter = require("./routers/tripsRouter");
 app.use('/trips', tripsRouter);
