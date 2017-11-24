@@ -1,18 +1,3 @@
-// const TRIPS_URL = '/trips';
-
-// function getAndDisplayTrips() {
-//   console.log('Retrieving trips');
-//   $.getJSON(TRIPS_URL, function(trips) {
-//     console.log(trips);
-//     trips.map(function(trip) {
-//       console.log(`${trip.title}, ${trip.description}`);
-//     });
-//   });
-// }
-
-// $(function() {
-//   getAndDisplayTrips();
-// });
 var MOCK_TRIPS_LIST = {
   "trips": [{
     "id": "1111",
@@ -206,114 +191,164 @@ var MOCK_TRIPS_LIST = {
     }
   }]
 };
-function getTrip(callbackFn) {
-  setTimeout(function () {
-    callbackFn(MOCK_TRIPS_LIST);
-  }, 100);
-}
+// function getTrip(callbackFn) {
+//   setTimeout(function(){ 
+//     callbackFn(MOCK_TRIPS_LIST)
+//   }, 100);
+// }
 
-// Pulling in the first trip out of mock data
-function firstTrip(data) {
-  selectedTrip = data.trips[0];
-}
+// // Pulling in the first trip out of mock data
+// function firstTrip(data) {
+//   selectedTrip = data.trips[0];
+// }
 
-function renderTripHeader(trip) {
-  var tripHeaderTemplate = "\n    <h2 class=\"heading__x-large\">" + trip.title + "</h2>\n    <div class=\"user-profile\">\n      <img src=\"" + trip.user.profilePhoto + "\" class=\"user-profile__photo\" alt=\"\">\n      <p class=\"user-profile__name\">\n        By " + trip.user.firstName + " " + trip.user.lastName + ", " + trip.user.hometown + "\n      </p>\n    </div>\n    <p class=\"trip__description\">" + trip.description + "</p>\n  ";
+// function renderTripHeader(trip) {
+//   const tripHeaderTemplate = (
+//   `
+//     <h2 class="heading__x-large">${trip.title}</h2>
+//     <div class="user-profile">
+//       <img src="${trip.user.profilePhoto}" class="user-profile__photo" alt="">
+//       <p class="user-profile__name">
+//         By ${trip.user.firstName} ${trip.user.lastName}, ${trip.user.hometown}
+//       </p>
+//     </div>
+//     <p class="trip__description">${trip.description}</p>
+//   `);
 
-  $(".js-trip-info").prepend(tripHeaderTemplate);
-}
+//   $(".js-trip-info").prepend(tripHeaderTemplate);
+// }
 
-function renderTripInterests(interest) {
-  var tripInterestsTemplate = "\n    <span class=\"tag\">" + interest + "</span>\n  ";
+// function renderTripInterests(interest) {
+//   const tripInterestsTemplate = (
+//   `
+//     <span class="tag">${interest}</span>
+//   `);
 
-  $(".js-trip-interests").append(tripInterestsTemplate);
-}
+//   $(".js-trip-interests").append(tripInterestsTemplate);
+// }
 
-function renderCalendarDays(day) {
-  var dayOfWeek = moment(day.calendarDate).format('dddd');
-  var formattedDate = moment(day.calendarDate).format('MMM D');
+// function renderCalendarDays(day) {
+//   const dayOfWeek = moment(day.calendarDate).format('dddd');
+//   const formattedDate = moment(day.calendarDate).format('MMM D');
 
-  var tripCalendarTemplate = "\n    <a href=\"#\" class=\"trip-calendar__day\" data-day=\"" + day.calendarDate + "\">\n      <span class=\"heading__small-caps\">\n        " + dayOfWeek + "\n      </span>\n      <span class=\"trip-calendar__date\">\n        " + formattedDate + "\n      </span>\n    </a>\n  ";
+//   const tripCalendarTemplate = (
+//   `
+//     <a href="#" class="trip-calendar__day" data-day="${day.calendarDate}">
+//       <span class="heading__small-caps">
+//         ${dayOfWeek}
+//       </span>
+//       <span class="trip-calendar__date">
+//         ${formattedDate}
+//       </span>
+//     </a>
+//   `);
 
-  $(".js-trip-calendar").append(tripCalendarTemplate);
-}
+//   $(".js-trip-calendar").append(tripCalendarTemplate);
+// }
 
-function renderTripDay(trip) {
-  var tripDayTemplate = "\n    <aside class=\"trip-day__sidebar\">\n      <section class=\"trip-day__sidebar-section\">\n        <h3 class=\"heading__small-caps\">Places</h3>\n        <h4 class=\"heading__medium\">" + trip.days[0].locations[0].name + ", " + trip.days[0].locations[0].country + "</h4>\n        <a href=\"#\" class=\"modal__link\">\n          " + trip.days[0].locations[0].sites[0].name + "\n        </a>\n        <a href=\"#\" class=\"modal__link\">\n          " + trip.days[0].locations[0].sites[1].name + "\n        </a>\n      </section>\n      <section class=\"trip-day__sidebar-section\">\n        <h3 class=\"heading__small-caps\">Lodging</h3>\n        <a href=\"#\" class=\"modal__link\">\n          " + trip.days[0].locations[0].sites[2].name + "<br>\n          " + trip.days[0].locations[0].sites[2].address + "\n        </a>\n      </section>\n      <section class=\"trip-day__sidebar-section\">\n        <h3 class=\"heading__small-caps\">Travel Details</h3>\n        " + trip.days[0].travelDetails + "\n      </section>\n    </aside>\n    <article class=\"trip-day__diary\">\n      " + trip.days[0].diaryEntry + "\n    </article>\n  ";
+// function renderTripDay(trip) {
+//   const tripDayTemplate = (
+//   `
+//     <aside class="trip-day__sidebar">
+//       <section class="trip-day__sidebar-section">
+//         <h3 class="heading__small-caps">Places</h3>
+//         <h4 class="heading__medium">${trip.days[0].locations[0].name}, ${trip.days[0].locations[0].country}</h4>
+//         <a href="#" class="modal__link">
+//           ${trip.days[0].locations[0].sites[0].name}
+//         </a>
+//         <a href="#" class="modal__link">
+//           ${trip.days[0].locations[0].sites[1].name}
+//         </a>
+//       </section>
+//       <section class="trip-day__sidebar-section">
+//         <h3 class="heading__small-caps">Lodging</h3>
+//         <a href="#" class="modal__link">
+//           ${trip.days[0].locations[0].sites[2].name}<br>
+//           ${trip.days[0].locations[0].sites[2].address}
+//         </a>
+//       </section>
+//       <section class="trip-day__sidebar-section">
+//         <h3 class="heading__small-caps">Travel Details</h3>
+//         ${trip.days[0].travelDetails}
+//       </section>
+//     </aside>
+//     <article class="trip-day__diary">
+//       ${trip.days[0].diaryEntry}
+//     </article>
+//   `);
 
-  $(".js-trip-day").append(tripDayTemplate);
-}
+//   $(".js-trip-day").append(tripDayTemplate);
+// }
 
-function renderTripDayPhotos(trip) {
-  var tripDayPhotosTemplate = "\n    <img src=\"" + trip.days[0].photos[0].file + "\" alt=\"\">\n  ";
+// function renderTripDayPhotos(trip) {
+//   const tripDayPhotosTemplate = (
+//   `
+//     <img src="${trip.days[0].photos[0].file}" alt="">
+//   `);
 
-  $(".js-trip-day-photos").append(tripDayPhotosTemplate);
-}
+//   $(".js-trip-day-photos").append(tripDayPhotosTemplate);
+// }
 
-function displayTripHeader(data) {
-  renderTripHeader(selectedTrip);
-}
+// function displayTripHeader(data) {
+//   renderTripHeader(selectedTrip);
+// }
 
-function displayTripInterests(data) {
-  selectedTrip.interests.map(function (interest) {
-    renderTripInterests(interest);
-  });
-}
+// function displayTripInterests(data) {
+//   selectedTrip.interests.map(function(interest) {
+//     renderTripInterests(interest);
+//   });
+// }
 
-function displayCalendarDays(data) {
-  selectedTrip.days.map(function (day) {
-    renderCalendarDays(day);
-  });
-}
+// function displayCalendarDays(data) {
+//   selectedTrip.days.map(function(day) {
+//     renderCalendarDays(day);
+//   });
+// }
 
-function displayTripDay(data) {
-  renderTripDay(selectedTrip);
-}
+// function displayTripDay(data) {
+//   renderTripDay(selectedTrip);
+// }
 
-function displayTripDayPhotos(data) {
-  renderTripDayPhotos(selectedTrip);
-}
+// function displayTripDayPhotos(data) {
+//   renderTripDayPhotos(selectedTrip);
+// }
 
-function getAndDisplayTrip() {
-  getTrip(firstTrip);
-  getTrip(displayTripDay);
-  getTrip(displayTripDayPhotos);
-  getTrip(displayTripHeader);
-  getTrip(displayTripInterests);
-  getTrip(displayCalendarDays);
-}
+// function getAndDisplayTrip() {
+//   getTrip(firstTrip);
+//   getTrip(displayTripDay);
+//   getTrip(displayTripDayPhotos);
+//   getTrip(displayTripHeader);
+//   getTrip(displayTripInterests);
+//   getTrip(displayCalendarDays);
+// }
 
-$(function () {
-  getAndDisplayTrip();
-});
-function getTrips(callbackFn) {
-  setTimeout(function () {
-    callbackFn(MOCK_TRIPS_LIST);
-  }, 100);
-}
+// $(function() {
+//   getAndDisplayTrip();
+// });
+var TRIPS_URL = '/trips';
 
 function renderTripList(trip) {
   var startDate = moment(trip.startDate).format('LL');
   var endDate = moment(trip.endDate).format('LL');
-  var interests = trip.interests.map(function (interest) {
-    return interest;
-  });
 
-  var tripTemplate = '\n    <li class="trips-list__trip">\n      <a href="' + trip.tripUrl + '" class="trips-list__link">\n        <img src="' + trip.coverPhoto + '" alt="" class="trips-list__photo">\n        <article class="trips-list__info">\n          <header class="trips-list__header">\n            <h2 class="heading__large">' + trip.title + '</h2>\n            <img class="user-profile__photo" src="' + trip.user.profilePhoto + '" alt="By ' + trip.user.firstName + ' ' + trip.user.lastName + '">\n          </header>\n          <p>' + startDate + ' &ndash; ' + endDate + '</p>\n          <p class="trips-list__description">' + trip.description + '</p>\n          <div>\n            ' + interests + '\n          </div>\n        </article>\n      </a>\n    </li>\n  ';
+  var tripTemplate = '\n    <li class="trips-list__trip">\n      <a href="' + trip.tripUrl + '" class="trips-list__link">\n        <div class="trips-list__photo-container">\n          <img src="' + trip.coverPhoto + '" alt="" class="trips-list__photo">\n        </div>\n        <article class="trips-list__info">\n          <header class="trips-list__header">\n            <h2 class="heading__large">' + trip.title + '</h2>\n          </header>\n          <p>' + startDate + ' &ndash; ' + endDate + '</p>\n          <p class="trips-list__description">' + trip.description + '</p>\n          <ul class="trips-list__interests">\n            ' + trip.interests.map(function (interest) {
+    return '<li class="tag">' + interest + '</li>';
+  }).join(' ') + '\n          </ul>\n        </article>\n      </a>\n    </li>\n  ';
 
   $(".js-trips-list").append(tripTemplate);
 }
 
-function displayTrips(data) {
-  data.trips.map(function (trip) {
-    renderTripList(trip);
+function getTrips() {
+  console.log('Retrieving trips');
+
+  $.getJSON(TRIPS_URL, function (data) {
+    data.map(function (trip) {
+      console.log(trip);
+      renderTripList(trip);
+    });
   });
 }
 
-function getAndDisplayTrips() {
-  getTrips(displayTrips);
-}
-
 $(function () {
-  getAndDisplayTrips();
+  getTrips();
 });

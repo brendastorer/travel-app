@@ -25,6 +25,7 @@
       <div class="site-header__auth">
         {{#if user}}
           Hello {{ user.username }}!
+          <a href="/logout">Log out</a>
         {{ else }}
           <a href="/login">Sign In</a>
         {{/if}}

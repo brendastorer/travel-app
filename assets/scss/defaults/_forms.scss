@@ -29,7 +29,8 @@ textarea {
   font-size: 1rem;
 }
 
-[type=text] {
+[type=text],
+[type=password] {
   display: block;
   font-family: $base-font-family;
   font-size: 1rem;

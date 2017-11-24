@@ -1,8 +1,12 @@
 .site-header {
   align-items: baseline;
   display: flex;
-  padding: 1.5rem 2rem 0;
+  margin: 1.5rem 2rem -0.5rem;
   justify-content: space-between;
+
+  a {
+    margin-left: 1rem;
+  }
 }
 
 .site-header__logo {

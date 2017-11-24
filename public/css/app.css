@@ -1,18 +1,22 @@
 @import url("https://fonts.googleapis.com/css?family=Arapey:400,400i|Lato:300,400,700");
 button,
+[type="submit"],
 .button {
+  font-family: "Lato", helvetica, sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   appearance: none;
   background-color: #f6ede8;
   border: 0;
+  border-radius: 0;
   color: #111;
   cursor: pointer;
   display: inline-block;
-  font-family: "Arapey", georgia, serif;
-  font-size: 16px;
   -webkit-font-smoothing: antialiased;
-  font-weight: 400;
   line-height: 1;
-  padding: 0.5rem 1rem;
+  min-width: 12em;
+  padding: 0.75rem 1rem;
   text-align: center;
   text-decoration: none;
   transition: background-color 150ms ease;
@@ -20,17 +24,21 @@ button,
   vertical-align: middle;
   white-space: nowrap; }
   button:hover,
+  [type="submit"]:hover,
   .button:hover {
     background-color: #a5d6d8; }
   button:focus,
+  [type="submit"]:focus,
   .button:focus {
-    outline: 3px solid #a5d6d8;
+    outline: 2px solid #a5d6d8;
     outline-offset: 2px; }
   button:disabled,
+  [type="submit"]:disabled,
   .button:disabled {
     cursor: not-allowed;
     opacity: 0.5; }
     button:disabled:hover,
+    [type="submit"]:disabled:hover,
     .button:disabled:hover {
       background-color: #f6ede8; }
 
@@ -62,7 +70,8 @@ textarea {
   font-family: "Arapey", georgia, serif;
   font-size: 1rem; }
 
-[type=text] {
+[type=text],
+[type=password] {
   display: block;
   font-family: "Arapey", georgia, serif;
   font-size: 1rem;
@@ -76,18 +85,23 @@ textarea {
   padding: 0.25rem;
   transition: border-color 150ms ease;
   width: 100%; }
-  [type=text]:hover {
+  [type=text]:hover,
+  [type=password]:hover {
     border-color: #a5d6d8; }
-  [type=text]:focus {
+  [type=text]:focus,
+  [type=password]:focus {
     border-color: #a5d6d8;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(165, 214, 216, 0.7);
     outline: none; }
-  [type=text]:disabled {
+  [type=text]:disabled,
+  [type=password]:disabled {
     background-color: #f2f2f2;
     cursor: not-allowed; }
-    [type=text]:disabled:hover {
+    [type=text]:disabled:hover,
+    [type=password]:disabled:hover {
       border: 1px solid #e7d0ba; }
-  [type=text]::placeholder {
+  [type=text]::placeholder,
+  [type=password]::placeholder {
     color: #777777; }
 
 textarea {
@@ -110,7 +124,7 @@ select {
 [type="radio"]:focus,
 [type="file"]:focus,
 select:focus {
-  outline: 3px solid #a5d6d8;
+  outline: 2px solid #a5d6d8;
   outline-offset: 2px; }
 
 *,
@@ -172,7 +186,7 @@ h6 {
 
 p {
   line-height: 1.4;
-  margin: 0 0 1rem; }
+  margin: 0 0 0.5rem; }
 
 a {
   border-bottom: 2px solid #a5d6d8;
@@ -182,7 +196,7 @@ a {
   a:hover {
     border-bottom-color: transparent; }
   a:focus {
-    outline: 3px solid #a5d6d8;
+    outline: 2px solid #a5d6d8;
     outline-offset: 2px; }
   a img {
     border-bottom: 0; }
@@ -194,6 +208,10 @@ hr {
   border-top: 0;
   margin: 1rem 0; }
 
+.form-container {
+  margin: 2rem auto;
+  max-width: 20rem; }
+
 .heading__x-large {
   font-size: 2.5em; }
 
@@ -204,12 +222,12 @@ hr {
   font-size: 1.5em; }
 
 .heading__small-caps {
-  display: block;
   font-family: "Lato", helvetica, sans-serif;
   font-size: 0.6rem;
   letter-spacing: 0.1em;
-  margin-bottom: 0.5em;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5em; }
 
 .modal__link {
   border: 1px solid #e7d0ba;
@@ -225,8 +243,10 @@ hr {
 .site-header {
   align-items: baseline;
   display: flex;
-  padding: 1.5rem 2rem 0;
+  margin: 1.5rem 2rem -0.5rem;
   justify-content: space-between; }
+  .site-header a {
+    margin-left: 1rem; }
 
 .site-header__logo {
   fill: #111; }
@@ -243,8 +263,8 @@ hr {
   border-radius: 1em;
   display: inline-block;
   font-family: "Lato", helvetica, sans-serif;
-  font-size: 0.75rem;
-  padding: 0.25em 0.75em; }
+  font-size: 0.65rem;
+  padding: 0.25em 0.8em 0.5em; }
 
 .trip-calendar {
   background-color: #f9f9f9;
@@ -308,13 +328,23 @@ hr {
   display: block;
   overflow: hidden;
   position: relative; }
+  @media (max-width: 900px) {
+    .trips-list__link {
+      margin-bottom: 2rem; } }
+
+.trips-list__photo-container {
+  height: 400px; }
+
+.trips-list__photo {
+  height: 400px;
+  object-fit: cover; }
 
 .trips-list__title {
   display: block; }
 
 .trips-list__info {
   background-color: #fff;
-  border-bottom: 0.75rem white solid;
+  border-bottom: 0.5rem white solid;
   border-right: 0.5rem white solid;
   box-sizing: content-box;
   padding: 0.5rem 0 0 1rem;
@@ -326,11 +356,14 @@ hr {
       right: 0;
       width: 75%; } }
   .trips-list__link:hover .trips-list__info {
-    transform: translate(-0.5rem, -0.75rem); }
+    transform: translate(-0.5rem, -0.5rem); }
 
 .trips-list__header {
   display: flex;
   justify-content: space-between; }
+
+.trips-list__interests {
+  margin-top: 0.75rem; }
 
 .user-profile {
   align-items: center;

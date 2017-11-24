@@ -2,19 +2,20 @@ $_button-background-color: $soft-accent-color;
 $_button-background-color-hover: $strong-accent-color;
 
 button,
+[type="submit"],
 .button {
+  @include small-caps;
   appearance: none;
   background-color: $_button-background-color;
   border: 0;
+  border-radius: 0;
   color: $base-font-color;
   cursor: pointer;
   display: inline-block;
-  font-family: $base-font-family;
-  font-size: 16px;
   -webkit-font-smoothing: antialiased;
-  font-weight: 400;
   line-height: 1;
-  padding: 0.5rem 1rem;
+  min-width: 12em;
+  padding: 0.75rem 1rem;
   text-align: center;
   text-decoration: none;
   transition: background-color $base-duration $base-timing;

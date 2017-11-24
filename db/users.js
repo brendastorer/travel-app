@@ -1,19 +1,20 @@
 var records = [
-    { 
-      id: 1, 
-      username: 'jack', 
-      password: 'secret', 
-      displayName: 'Jack', 
-      emails: [ 
-        { value: 'jack@example.com' } 
-      ] 
-    }, 
-    { id: 2, 
-    username: 'jill', 
-    password: 'birthday', 
-    displayName: 'Jill', 
+  { 
+    id: 1, 
+    username: 'jack', 
+    password: 'secret', 
+    displayName: 'Jack', 
     emails: [ 
-      { value: 'jill@example.com' } 
+      { value: 'jack@example.com' } 
+    ] 
+  }, 
+  { 
+    id: 2, 
+    username: 'brenda', 
+    password: 'limelava', 
+    displayName: 'Brenda', 
+    emails: [ 
+      { value: 'brendastorer@gmail.com' } 
     ] 
   }
 ];
