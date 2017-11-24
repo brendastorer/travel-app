@@ -223,7 +223,10 @@ hr {
     border-color: #a5d6d8; }
 
 .site-header {
-  padding: 2rem 2rem 0; }
+  align-items: baseline;
+  display: flex;
+  padding: 1.5rem 2rem 0;
+  justify-content: space-between; }
 
 .site-header__logo {
   fill: #111; }

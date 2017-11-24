@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Travel App</title>
+    <meta name="description" content="A Personal Travel Planner and Diary">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/app.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <svg class="site-header__logo" xmlns="http://www.w3.org/2000/svg" width="111.1px" height="28px" viewBox="0 0 111.1 28">
+          <title>HELE</title>
+          <path d="M0,0h2.1v13H20V0h2.1v28H20V14.9H2.1V28H0V0z"/>
+          <path d="M33.4,0h19.9v1.9H35.5v11h16v1.9h-16v11.2h18V28H33.4V0z"/>
+          <path d="M63.2,0h2.1v26.1h16.4V28H63.2V0z"/>
+          <path d="M91,0h19.9v1.9H93v11h16v1.9H93v11.2h18V28H91V0z"/>
+        </svg>
+        <h1 class="site-header__title">
+          travel planner & diary
+        <h1>
+      </div>
+      <div class="site-header__auth">
+        {{#if user}}
+          Hello {{ user.username }}!
+        {{ else }}
+          <a href="/login">Sign In</a>
+        {{/if}}
+      </div>
+    </header>
+    <main>
+      {{{ body }}}
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous">    
+    </script>
+    <script src="javascript/moment.js"></script>
+    <script src="javascript/app.min.js"></script>
+  </body>
+</html>
