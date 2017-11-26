@@ -56,7 +56,7 @@ router.get('/logout',
 });
 
 router.get('/my-trips',
-  require('connect-ensure-login').ensureLoggedIn(),
+  // require('connect-ensure-login').ensureLoggedIn(),
   function(req, res) {
     res.render('trips', { user: req.user });
 });

@@ -289,11 +289,19 @@ hr {
 @media (min-width: 900px) {
   .trip-header {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr);
+    height: 400px; } }
 
 .trip-header__info {
   align-self: end;
   padding: 2rem; }
+
+.trip-header__photo-container {
+  height: 400px; }
+
+.trip-header__photo {
+  height: 400px;
+  object-fit: cover; }
 
 .trip-day {
   display: grid;
@@ -311,6 +319,17 @@ hr {
 .trip-day__diary {
   grid-column: 3 / 4;
   line-height: 1.4; }
+
+.trip-slideshow {
+  height: 400px;
+  position: relative; }
+
+.trip-slideshow__photo {
+  background-color: #111;
+  height: 400px;
+  margin: 2rem 0;
+  object-fit: contain;
+  position: absolute; }
 
 .trips-list {
   font-size: 0.85rem;

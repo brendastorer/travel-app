@@ -14,66 +14,56 @@ const MOCK_TRIPS_LIST = {
         "hiking", 
         "history"
       ],
+      "user": {
+        "id": "1",
+        "username": "brenda",
+        "password": "limelava",
+        "displayname": "Brenda",
+        "emails": [
+          { value: "brendastorer@gmail.com" }
+        ],
+        "hometown": "New York City",
+        "profilePhoto": "http://placebeyonce.com/80-80"
+      },
       "media": [
         {
-          "id": "11",
           "file": "https://media-cdn.tripadvisor.com/media/photo-s/0f/4a/fe/6e/edinburgh-from-calton.jpg",
-          "caption": "",
-          "type": "jpg",
-          "size": "24kb"
+          "caption": "Edinburgh"
         },
         {
-          "id": "22",
-          "file": "https://media-cdn.tripadvisor.com/media/photo-s/0f/4a/fe/6e/edinburgh-from-calton.jpg",
-          "caption": "",
-          "type": "jpg",
-          "size": "24kb"
+          "file": "https://thumbnails.trvl-media.com/IXbKqXCvQEtipRPX3SGASeiEuoI=/960x540/a.travel-assets.com/findyours-php/viewfinder/images/res30/138000/138379-Isle-Of-Skye.jpg",
+          "caption": "Isle of Skye"
         },
         {
-          "id": "33",
           "file": "https://www.walkhighlands.co.uk/lothian/1_2/1_2_2l.JPG",
-          "caption": "",
-          "type": "jpg",
-          "size": "24kb"
+          "caption": "From my hike"
         }
       ],
       "days": [
         {
-          "id": "111111",
           "calendarDate": "20150621",
           "diaryEntry": "Truffaut austin bitters twee. Fixie pabst gentrify, beard pug iPhone leggings lyft thundercats master cleanse jean shorts prism shaman craft beer poutine. Cold-pressed yuccie YOLO williamsburg cronut jianbing before they sold out man braid. Lomo yuccie shoreditch taxidermy chartreuse. Man braid gentrify seitan fam YOLO. Cray tumblr letterpress pok pok brunch. Enamel pin retro woke godard aesthetic you probably haven't heard of them umami cronut. Raclette subway tile meh iPhone mustache pinterest cray offal wayfarers messenger bag. Venmo live-edge leggings scenester echo park, activated charcoal pickled vape. Ethical fingerstache gentrify farm-to-table.",
           "travelDetails": "United 209 Depart 9:09pm JFK Arrive next day 9:00am EDI",
-          "photos": [
-            {
-              "id": "11",
-              "file": "https://media-cdn.tripadvisor.com/media/photo-s/0f/4a/fe/6e/edinburgh-from-calton.jpg",
-              "caption": ""
-            }
-          ],
           "locations": [
             {
-              "id": "111",
               "name": "Edinburgh",
               "country": "Scotland",
               "sites": [
                 {
-                  "id": "11111",
                   "name": "Arthur's Seat",
                   "address": "",
-                  "type": "historic site",
+                  "type": "",
                   "rating": 3,
                   "ratingComment": "Amazing view!"
                 },
                 {
-                  "id": "22222",
                   "name": "Whiski Rooms",
                   "address": "",
-                  "type": "restaurant/bar",
+                  "type": "",
                   "rating": 2,
                   "ratingComment": "Great whiskey selection with helpful staff.",
                 },
                 {
-                  "id": "33333",
                   "name": "The Inn Place",
                   "address": "20-30 Cockburn Street, Edinburgh",
                   "type": "lodging",
@@ -85,35 +75,29 @@ const MOCK_TRIPS_LIST = {
           ]
         },
         {
-          "id": "222222",
           "calendarDate": "20150622",
           "diaryEntry": "",
           "travelDetails": "",
-          "photos": "",
           "locations": [
             {
-              "id": "111",
               "name": "Edinburgh",
               "country": "Scotland",
               "sites": [
                 {
-                  "id": "11111",
                   "name": "Arthur's Seat",
                   "address": "",
-                  "type": "historic site",
+                  "type": "",
                   "rating": 3,
                   "ratingComment": "Amazing view!"
                 },
                 {
-                  "id": "22222",
                   "name": "Whiski Rooms",
                   "address": "",
-                  "type": "restaurant/bar",
+                  "type": "",
                   "rating": 2,
                   "ratingComment": "Great whiskey selection with helpful staff.",
                 },
                 {
-                  "id": "33333",
                   "name": "The Inn Place",
                   "address": "20-30 Cockburn Street, Edinburgh",
                   "type": "lodging",
@@ -125,27 +109,22 @@ const MOCK_TRIPS_LIST = {
           ]
         },
         {
-          "id": "333333",
           "calendarDate": "20150623",
           "diaryEntry": "",
           "travelDetails": "",
-          "photos": "",
           "locations": [
             {
-              "id": "111",
               "name": "Edinburgh",
               "country": "Scotland",
               "sites": [
                 {
-                  "id": "22222",
                   "name": "The Albanach",
                   "address": "",
-                  "type": "restaurant/bar",
+                  "type": "",
                   "rating": 3,
                   "ratingComment": "Probably the best whiskey selection in the city!"
                 },
                 {
-                  "id": "33333",
                   "name": "The Inn Place",
                   "address": "",
                   "type": "lodging",
@@ -155,12 +134,10 @@ const MOCK_TRIPS_LIST = {
               ]
             },
             {
-              "id": "222",
               "name": "Speyside",
               "country": "Scotland",
               "sites": [
                 {
-                  "id": "44444",
                   "name": "Glenfarclas Distillery",
                   "address": "Ballindalloch",
                   "type": "",
@@ -168,7 +145,6 @@ const MOCK_TRIPS_LIST = {
                   "ratingComment": ""
                 },
                 {
-                  "id": "55555",
                   "name": "Craigellachie Hotel",
                   "address": "",
                   "type": "lodging",
@@ -180,19 +156,15 @@ const MOCK_TRIPS_LIST = {
           ]
         },
         {
-          "id": "444444",
           "calendarDate": "20150624",
           "diaryEntry": "",
           "travelDetails": "",
-          "photos": "",
           "locations": [
             {
-              "id": "222",
               "name": "Speyside",
               "country": "Scotland",
               "sites": [
                 {
-                  "id": "44444",
                   "name": "Glenlivet Distillery",
                   "address": "",
                   "type": "",
@@ -200,7 +172,6 @@ const MOCK_TRIPS_LIST = {
                   "ratingComment": ""
                 },
                 {
-                  "id": "55555",
                   "name": "Craigellachie Hotel",
                   "address": "",
                   "type": "lodging",
@@ -212,28 +183,18 @@ const MOCK_TRIPS_LIST = {
           ]
         },
         {
-          "id": "555555",
           "calendarDate": "20150625",
           "diaryEntry": "",
           "travelDetails": "United 489 Depart 2:00pm EDI Arrive 7:23pm JFK",
-          "photos": "",
           "locations": [
             {
-              "id": "111",
               "name": "Edinburgh",
               "country": "Scotland",
               "sites": ""
             }
           ]
         }
-      ],
-      "user": {
-        "id": "1",
-        "firstName": "Brenda",
-        "lastName": "Storer",
-        "hometown": "New York City",
-        "profilePhoto": "http://placebeyonce.com/80-80"
-      }
+      ]
     }
   ]
 };

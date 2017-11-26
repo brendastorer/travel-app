@@ -1,11 +1,11 @@
 var records = [
   { 
     id: 1, 
-    username: 'jack', 
-    password: 'secret', 
-    displayName: 'Jack', 
+    username: 'demo', 
+    password: 'password', 
+    displayName: 'Demo User', 
     emails: [ 
-      { value: 'jack@example.com' } 
+      { value: 'demo@example.com' } 
     ] 
   }, 
   { 

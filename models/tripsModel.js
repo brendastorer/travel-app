@@ -7,23 +7,26 @@ function StorageException(message) {
 
 const Trips = {
   create: function(
-    coverPhoto,
+    days,
     description, 
     endDate, 
     interests,
+    media,
     public, 
     startDate, 
     title, 
-    tripUrl) {
+    tripUrl
+    ) {
 
     console.log("Creating new trip...")
 
     const trip = {
       id: uuid.v4(),
-      coverPhoto: coverPhoto,
+      days: days,
       description: description,
       endDate: endDate,
       interests: interests,
+      media: media,
       public: public || true,
       startDate: startDate,
       title: title,
@@ -38,7 +41,7 @@ const Trips = {
     if (id !== null) {
       return this.trips.find(trip => trip.id === id);
     }
-    console.log('Retrieving trips...');
+
     return Object.keys(this.trips).map(key => this.trips[key]);
     // return this.posts.sort(function(a, b) {
     //   return b.publishDate - a.publishDate
