@@ -14,7 +14,6 @@ function renderTripList(trip) {
         <article class="trips-list__info">
           <header class="trips-list__header">
             <h2 class="heading__large">${trip.title}</h2>
-            <img src="http://placebeyonce.com/80-80" class="user-profile__photo" alt="Display Name">
           </header>
           <p>${startDate} &ndash; ${endDate}</p>
           <p class="trips-list__description">${trip.description}</p>

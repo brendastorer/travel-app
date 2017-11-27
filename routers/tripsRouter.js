@@ -21,22 +21,19 @@ Trips.create(
               "name": "Arthur's Seat",
               "address": "",
               "type": "",
-              "rating": 3,
-              "ratingComment": "Amazing view!"
+              "website": ""
             },
             {
               "name": "Whiski Rooms",
               "address": "",
               "type": "",
-              "rating": 2,
-              "ratingComment": "Great whiskey selection with helpful staff.",
+              "website": ""
             },
             {
               "name": "The Inn Place",
               "address": "20-30 Cockburn Street, Edinburgh",
               "type": "lodging",
-              "rating": 3,
-              "ratingComment": "Lovely little hotel in a convenient location."
+              "website": ""
             }
           ]
         }
@@ -55,22 +52,19 @@ Trips.create(
               "name": "Arthur's Seat",
               "address": "",
               "type": "",
-              "rating": 3,
-              "ratingComment": "Amazing view!"
+              "website": ""
             },
             {
               "name": "Whiski Rooms",
               "address": "",
               "type": "",
-              "rating": 2,
-              "ratingComment": "Great whiskey selection with helpful staff.",
+              "website": ""
             },
             {
               "name": "The Inn Place",
               "address": "20-30 Cockburn Street, Edinburgh",
               "type": "lodging",
-              "rating": 3,
-              "ratingComment": "Lovely little hotel in a convenient location."
+              "website": ""
             }
           ]
         }
@@ -89,15 +83,13 @@ Trips.create(
               "name": "The Albanach",
               "address": "",
               "type": "",
-              "rating": 3,
-              "ratingComment": "Probably the best whiskey selection in the city!"
+              "website": ""
             },
             {
               "name": "The Inn Place",
               "address": "",
               "type": "lodging",
-              "rating": 3,
-              "ratingComment": "Lovely little hotel in a convenient location."
+              "website": ""
             }
           ]
         },
@@ -109,15 +101,13 @@ Trips.create(
               "name": "Glenfarclas Distillery",
               "address": "Ballindalloch",
               "type": "",
-              "rating": 2,
-              "ratingComment": ""
+              "website": ""
             },
             {
               "name": "Craigellachie Hotel",
-              "address": "",
+              "address": "Craigellachie",
               "type": "lodging",
-              "rating": 2,
-              "ratingComment": ""
+              "website": ""
             }
           ]
         }
@@ -135,12 +125,14 @@ Trips.create(
             {
               "name": "Glenlivet Distillery",
               "address": "",
-              "type": ""
+              "type": "",
+              "website": ""
             },
             {
               "name": "Craigellachie Hotel",
-              "address": "",
-              "type": "lodging"
+              "address": "Craigellachie",
+              "type": "lodging",
+              "website": ""
             }
           ]
         }
