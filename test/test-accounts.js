@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const should = chai.should();
 const {app, runServer, closeServer} = require('../server');
 const {TEST_DATABASE_URL} = require('../config');
+const Account = require("../models/accountModel.js");
 
 chai.use(chaiHttp);
 
@@ -13,7 +14,7 @@ function tearDownDb() {
   return mongoose.connection.dropDatabase();
 }
 
-describe('Trip resource', function() {
+describe('Accounts', function() {
   before(function() {
     return runServer(TEST_DATABASE_URL);
   });
@@ -23,6 +24,27 @@ describe('Trip resource', function() {
     return closeServer();
   });
 
+  describe('Users', function() {
+    it('should register a new account', function() {
+      const account = new Account({
+        username: '12345',
+        password: 'testy'
+      });
+
+      account.save((error) => {
+        if (error) console.log('error' + error.message);
+        else console.log('no error');
+      });
+    });
+
+    it('should find a user by username', (done) => {
+      Account.findOne({ username: '12345' }, (err, account) => {
+        account.username.should.eql('12345');
+        console.log("   username: ", account.username);
+        done();
+      });
+    });
+  });
 
   describe('Trips', function() {
     it('should add a trip on POST', function() {
