@@ -61,11 +61,6 @@ router.get('/my-trips',
     res.render('trips', { user: req.user });
 });
 
-router.get('/trips_static',
-  function(req, res) {
-    res.render('trips', { user: req.user });
-});
-
 router.get('/trip_static',
   function(req, res) {
     res.render('trip', { user: req.user });
