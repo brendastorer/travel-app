@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
-var passport = require('passport');
-var Strategy = require('passport-local').Strategy;
-var db = require('../db');
+const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
+const passport = require('passport');
+const Strategy = require('passport-local').Strategy;
+
+const {User} = require('../models/userModel');
 
 // Initialize Passport and restore authentication state, if any, from the
 // session.
@@ -11,7 +14,7 @@ router.use(passport.session());
 
 passport.use(new Strategy(
   function(username, password, cb) {
-    db.users.findByUsername(username, function(err, user) {
+    User.findByUsername(username, function(err, user) {
       if (err) { return cb(err); }
       if (!user) { return cb(null, false); }
       if (user.password != password) { return cb(null, false); }
@@ -28,6 +31,45 @@ passport.deserializeUser(function(id, cb) {
     if (err) { return cb(err); }
     cb(null, user);
   });
+});
+
+// show all users
+router.get('/users', (req, res) => {
+  User
+    .find()
+    .then(users => {
+      res.json(users.map(user => user.apiRepr()));
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({error: 'something went terribly wrong'});
+    });
+});
+
+// create a new user
+router.post('/users', jsonParser, (req, res) => {
+  const requiredFields = ['username', 'password', 'displayName', 'emails'];
+  for (let i=0; i<requiredFields.length; i++) {
+    const field = requiredFields[i];
+    if (!(field in req.body)) {
+      const message = `Missing \`${field}\` in request body`
+      console.error(message);
+      return res.status(400).send(message);
+    }
+  }
+
+  User
+    .create({
+      username: req.body.username,
+      password: req.body.password,
+      displayName: req.body.displayName,
+      emails: req.body.emails
+    })
+    .then(user => res.status(201).json(user.apiRepr()))
+    .catch(err => {
+        console.error(err);
+        res.status(500).json({error: 'Something went wrong'});
+    });
 });
 
 router.get('/',
