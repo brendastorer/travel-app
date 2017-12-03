@@ -8,7 +8,7 @@ var records = [
       { value: 'demo@example.com' } 
     ] 
   }, 
-  { 
+  {
     id: 2, 
     username: 'brenda', 
     password: 'limelava', 
