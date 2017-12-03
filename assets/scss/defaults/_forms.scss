@@ -27,20 +27,17 @@ textarea {
   display: block;
   font-family: $base-font-family;
   font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 [type=text],
 [type=password] {
-  display: block;
-  font-family: $base-font-family;
-  font-size: 1rem;
   appearance: none;
   background-color: $_form-background-color;
   border: $base-border;
   border-radius: $base-border-radius;
   box-shadow: $_form-box-shadow;
   box-sizing: border-box;
-  margin-bottom: 0.5rem;
   padding: 0.25rem;
   transition: border-color $base-duration $base-timing;
   width: 100%;

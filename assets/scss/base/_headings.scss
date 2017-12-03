@@ -1,0 +1,36 @@
+@mixin heading--x-large {
+  font-size: 2.5em;
+}
+
+@mixin heading--large {
+  font-size: 2em;
+}
+
+@mixin heading--medium {
+  font-size: 1.5em;
+}
+
+@mixin small-caps {
+  font-family: $alt-font-family;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.heading--x-large {
+  @include heading--x-large;
+}
+
+.heading--large {
+  @include heading--large;
+}
+
+.heading--medium {
+  @include heading--medium;
+}
+
+.heading--small-caps {
+  @include small-caps;
+  display: block;
+  margin-bottom: 0.5em;
+}

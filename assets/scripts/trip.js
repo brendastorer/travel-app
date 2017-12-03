@@ -5,7 +5,7 @@ function renderTripHeader(trip) {
       <img src="${trip.media[0].file}" alt="${trip.media[0].caption}" class="trip-header__photo">
     </div>
     <article class="trip-header__info">
-      <h2 class="heading__x-large">${trip.title}</h2>
+      <h2 class="heading--x-large">${trip.title}</h2>
       <div class="user-profile">
         <img src="http://placebeyonce.com/80-80" class="user-profile__photo" alt="">
         <p class="user-profile__name">
@@ -31,7 +31,7 @@ function renderCalendarDays(day) {
   const tripCalendarTemplate = (
   `
     <a href="#" class="trip-calendar__day" data-day="${day.calendarDate}">
-      <span class="heading__small-caps">
+      <span class="heading--small-caps">
         ${dayOfWeek}
       </span>
       <span class="trip-calendar__date">
@@ -48,8 +48,8 @@ function renderTripDay(trip) {
   `
     <aside class="trip-day__sidebar">
       <section class="trip-day__sidebar-section">
-        <h3 class="heading__small-caps">Places</h3>
-        <h4 class="heading__medium">${trip.days[0].locations[0].name}, ${trip.days[0].locations[0].country}</h4>
+        <h3 class="heading--small-caps">Places</h3>
+        <h4 class="heading--medium">${trip.days[0].locations[0].name}, ${trip.days[0].locations[0].country}</h4>
         <a href="#" class="modal__link">
           ${trip.days[0].locations[0].sites[0].name}
         </a>
@@ -58,14 +58,14 @@ function renderTripDay(trip) {
         </a>
       </section>
       <section class="trip-day__sidebar-section">
-        <h3 class="heading__small-caps">Lodging</h3>
+        <h3 class="heading--small-caps">Lodging</h3>
         <a href="#" class="modal__link">
           ${trip.days[0].locations[0].sites[2].name}<br>
           ${trip.days[0].locations[0].sites[2].address}
         </a>
       </section>
       <section class="trip-day__sidebar-section">
-        <h3 class="heading__small-caps">Travel Details</h3>
+        <h3 class="heading--small-caps">Travel Details</h3>
         ${trip.days[0].travelDetails}
       </section>
     </aside>

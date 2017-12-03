@@ -3,10 +3,6 @@
   display: flex;
   margin: 1.5rem 2rem -0.5rem;
   justify-content: space-between;
-
-  a {
-    margin-left: 1rem;
-  }
 }
 
 .site-header__logo {
@@ -19,4 +15,15 @@
   font-size: 2rem;
   margin-bottom: 1rem;
   margin-left: 1rem;
+}
+
+.site-header__auth {
+  a {
+    border-bottom: 0;
+    padding: 0 0.25em;
+
+    &:hover {
+      background-color: $strong-accent-color--lighter;
+    }
+  }
 }

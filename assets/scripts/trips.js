@@ -13,7 +13,7 @@ function renderTripList(trip) {
         </div>
         <article class="trips-list__info">
           <header class="trips-list__header">
-            <h2 class="heading__large">${trip.title}</h2>
+            <h2 class="heading--large">${trip.title}</h2>
           </header>
           <p>${startDate} &ndash; ${endDate}</p>
           <p class="trips-list__description">${trip.description}</p>

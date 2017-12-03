@@ -1,13 +1,19 @@
-var express = require('express');
-var exphandlebars  = require('express-handlebars');
+const express = require('express');
+const exphandlebars  = require('express-handlebars');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const flash = require('connect-flash');
 
 const {DATABASE_URL, PORT} = require('./config');
 
 const app = express();
 
-// Configure view engine to render EJS templates.
 app.engine('handlebars', exphandlebars({defaultLayout: 'main'}));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'handlebars');
@@ -17,19 +23,30 @@ app.use(express.static('public'));
 app.use(require('cookie-parser')());
 app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+app.use(express.static(path.join(__dirname, 'public')));
 
 mongoose.Promise = global.Promise;
 
 // routes
-const userRouter = require("./routers/userRouter");
-app.use('/', userRouter);
+const routes = require('./routes/index');
+const users = require('./routes/users');
+app.use('/', routes);
 
-const tripRouter = require("./routers/tripRouter");
+const tripRouter = require("./routes/trips");
 app.use('/trips', tripRouter);
 
 app.use('*', function(req, res) {
   res.status(404).json({message: 'Not Found'});
 });
+
+// passport config
+const Account = require('./models/accountModel');
+passport.use(new LocalStrategy(Account.authenticate()));
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
 
 let server;
 

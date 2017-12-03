@@ -2,3 +2,8 @@
   margin: 2rem auto;
   max-width: 20rem;
 }
+
+.form-container__heading {
+  @include heading--large;
+  margin-bottom: 1rem;
+}
