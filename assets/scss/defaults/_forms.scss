@@ -30,8 +30,7 @@ textarea {
   margin-bottom: 1rem;
 }
 
-[type=text],
-[type=password] {
+input {
   appearance: none;
   background-color: $_form-background-color;
   border: $base-border;
@@ -41,6 +40,10 @@ textarea {
   padding: 0.25rem;
   transition: border-color $base-duration $base-timing;
   width: 100%;
+
+  &[type="submit"] {
+    width: auto;
+  }
 
   &:hover {
     border-color: $strong-accent-color;
