@@ -30,11 +30,11 @@ router.post('/register', (req, res, next) => {
 });
 
 
-router.get('/sign-in', (req, res) => {
-  res.render('sign-in', { user : req.user, error : req.flash('error')});
+router.get('/login', (req, res) => {
+  res.render('login', { user : req.user, error : req.flash('error')});
 });
 
-router.post('/sign-in', passport.authenticate('local', { failureRedirect: '/sign-in', failureFlash: true }), (req, res, next) => {
+router.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), (req, res, next) => {
   req.session.save((err) => {
     if (err) {
         return next(err);
@@ -51,6 +51,12 @@ router.get('/logout', (req, res, next) => {
     }
     res.redirect('/');
   });
+});
+
+router.get('/add-trip',
+  // require('connect-ensure-login').ensureLoggedIn(),
+  function(req, res) {
+    res.render('trip-form', { user: req.user });
 });
 
 router.get('/my-trips',

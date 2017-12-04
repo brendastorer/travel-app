@@ -25,6 +25,7 @@ button,
 
   &:hover {
     background-color: $_button-background-color-hover;
+    color: $base-font-color;
   }
 
   &:focus {

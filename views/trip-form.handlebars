@@ -1,0 +1,31 @@
+<section class="form-container">
+  <h1 class="form-container__heading">Add a new trip</h1>
+  <form action="/trips" method="post" role="form">
+    <div class="form-container__section">
+      <label for="title">Title *</label>
+      <input type="text" name="title" placeholder='e.g. "Australia 2017"'/>
+    </div>
+
+    <div class="form-container__section">
+      <label for="description">Description (maximum length 100 characters) *</label>
+      <textarea name="description" placeholder="Add a short description of your trip..." maxlength="100" /></textarea>
+    </div>
+
+    <div class="form-container__section">
+      <label for="media[].file">Photos</label>
+      <input type="text" name="media[].file" placeholder='Add link to self hosted image file'/>
+      <a href="#" class="form-container__link js-add-media">+ add more</a>
+    </div>
+    
+    <label for="interests[]">Interests</label>
+    <div class="form-container__section--two-across">
+      <input type="text" name="interests[]" placeholder='e.g. "hiking"' />
+      <input type="text" name="interests[]" placeholder='e.g. "museums"' />
+      <a href="#" class="form-container__link js-add-interests">+ add more</a>
+    </div>
+
+    <div class="form-container__actions">
+      <input type="submit" value="Submit"/>
+    </div>
+  </form>
+</section>

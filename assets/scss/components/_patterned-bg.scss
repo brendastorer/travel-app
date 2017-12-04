@@ -1,0 +1,8 @@
+.patterned-bg {
+  background-color: $black;
+  background-image: url("../images/palms-bg.png");
+  background-size: cover;
+  padding: 4rem 0 1rem;
+  height: calc(100vh - #{$site-header-height});
+  width: 100%;
+}

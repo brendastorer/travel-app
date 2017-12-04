@@ -16,8 +16,23 @@ function getTrips() {
 $(function () {
   getTrips();
 });
+$(document).ready(function () {
+  var interestsInput = "\n    <input type=\"text\" name=\"interests[]\" placeholder='e.g. \"hiking\"' />\n    <input type=\"text\" name=\"interests[]\" placeholder='e.g. \"museums\"' />\n  ";
+
+  var mediaInput = "\n    <input type=\"text\" name=\"media[].file\" placeholder='Add link to self hosted image file'/>\n  ";
+
+  $(".js-add-interests").click(function (event) {
+    event.preventDefault();
+    $(this).before(interestsInput);
+  });
+
+  $(".js-add-media").click(function (event) {
+    event.preventDefault();
+    $(this).before(mediaInput);
+  });
+});
 function renderTripHeader(trip) {
-  var tripHeaderTemplate = '  \n    <div class="trip-header__photo-container">\n      <img src="' + trip.media[0].file + '" alt="' + trip.media[0].caption + '" class="trip-header__photo">\n    </div>\n    <article class="trip-header__info">\n      <h2 class="heading--x-large">' + trip.title + '</h2>\n      <div class="user-profile">\n        <img src="http://placebeyonce.com/80-80" class="user-profile__photo" alt="">\n        <p class="user-profile__name">\n          By Brenda Storer, New York City\n        </p>\n      </div>\n      <p class="trip__description">' + trip.description + '</p>\n      <ul class="trips-list__interests">\n        ' + trip.interests.map(function (interest) {
+  var tripHeaderTemplate = '  \n    <div class="trip-header__photo-container">\n      <img src="' + trip.media[0].file + '" alt="' + trip.media[0].caption + '" class="trip-header__photo">\n    </div>\n    <article class="trip-header__info">\n      <h2 class="heading--x-large">' + trip.title + '</h2>\n      <div class="user-profile">\n        <p class="user-profile__name">\n          Traveler: Brenda Storer, New York City\n        </p>\n      </div>\n      <p class="trip__description">' + trip.description + '</p>\n      <ul class="trips-list__interests">\n        ' + trip.interests.map(function (interest) {
     return '<li class="tag">' + interest + '</li>';
   }).join(' ') + '\n      </ul>\n    </article>\n  ';
 

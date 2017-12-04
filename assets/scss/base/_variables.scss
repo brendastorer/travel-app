@@ -8,24 +8,23 @@ $handwritten-font-family: "Madelyn-Regular", georgia, serif;
 $base-line-height: 1.4;
 $heading-line-height: 1.2;
 
-// Other Sizes
-$base-border-radius: 5px;
-$base-z-index: 0;
-
 // Colors
 $teal: #a5d6d8;
+$green: #d7eada;
 $beige: #f6ede8;
 $tan: #e7d0ba;
 $purple: #9a8194;
 $black: #111;
+$gray--light: #d6dad8;
 $white: #fff;
 $off-white: #f9f9f9;
 
 // Font Colors
 $base-font-color: $black;
-$soft-accent-color: $beige;
+$soft-accent-color: $green;
 $strong-accent-color: $teal;
 $strong-accent-color--lighter: lighten($strong-accent-color, 15%);
+$strong-accent-color--darker: darken($strong-accent-color, 30%);
 
 // Font Sizes
 $base-font-size: 1rem;
@@ -34,9 +33,11 @@ $x-small-font-size: 0.65rem;
 
 // Other Sizes
 $trip-header-height: 400px;
+$site-header-height: 4.5rem;
 
 // Border
-$base-border-color: $tan;
+$base-border-radius: 5px;
+$base-border-color: $gray--light;
 $base-border: 1px solid $base-border-color;
 
 // Background Colors
@@ -55,3 +56,6 @@ $base-timing: ease;
 // Media Queries
 $large-screen-and-up: 900px;
 $medium-screen-and-up: 500px;
+
+// z index
+$base-z-index: 0;

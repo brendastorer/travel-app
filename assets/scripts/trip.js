@@ -7,9 +7,8 @@ function renderTripHeader(trip) {
     <article class="trip-header__info">
       <h2 class="heading--x-large">${trip.title}</h2>
       <div class="user-profile">
-        <img src="http://placebeyonce.com/80-80" class="user-profile__photo" alt="">
         <p class="user-profile__name">
-          By Brenda Storer, New York City
+          Traveler: Brenda Storer, New York City
         </p>
       </div>
       <p class="trip__description">${trip.description}</p>

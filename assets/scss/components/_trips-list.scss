@@ -22,6 +22,10 @@ $_trips-list-row-height: 400px;
   @media (max-width: $large-screen-and-up) {
     margin-bottom: 2rem;
   }
+
+  &:hover {
+    color: $base-font-color;
+  }
 }
 
 .trips-list__photo-container {

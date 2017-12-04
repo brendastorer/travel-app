@@ -44,6 +44,7 @@ router.post('/', jsonParser, (req, res) => {
     .create({
       title: req.body.title,
       description: req.body.description,
+      postedBy: req.body.postedBy,
       startDate: req.body.startDate,
       endDate: req.body.endDate,
       tripUrl: req.body.tripUrl,
