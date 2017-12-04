@@ -1,8 +1,18 @@
 .site-header {
-  align-items: baseline;
+  align-items: center;
+  background-color: $white;
   display: flex;
-  margin: 1.5rem 2rem -0.5rem;
+  height: $site-header-height;
+  margin: 0 1rem 0 2rem;
   justify-content: space-between;
+}
+
+.site-header__logo-and-title {
+  margin-top: 2.25rem;
+
+  a {
+    border-bottom: 0;
+  }
 }
 
 .site-header__logo {
@@ -18,12 +28,14 @@
 }
 
 .site-header__auth {
+  @include small-caps;
+
   a {
     border-bottom: 0;
     padding: 0 0.25em;
 
     &:hover {
-      background-color: $strong-accent-color--lighter;
+      background-color: $soft-accent-color;
     }
   }
 }

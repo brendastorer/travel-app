@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const tripSchema = mongoose.Schema({
   title: {type: String, required: true},
   description: {type: String, required: true},
+  postedBy: {type: mongoose.Schema.Types.ObjectId, ref: 'Account'},
   startDate: Date,
   endDate: Date,
   tripUrl: String,
@@ -41,6 +42,7 @@ tripSchema.methods.apiRepr = function() {
   return {
     id: this._id,
     title: this.title,
+    postedBy: this.postedBy,
     description: this.description,
     startDate: this.startDate,
     endDate: this.endDate,
@@ -52,6 +54,6 @@ tripSchema.methods.apiRepr = function() {
   };
 }
 
-const Trip = mongoose.model("Trip", tripSchema);
+const Trip = mongoose.model('Trip', tripSchema);
 
 module.exports = {Trip};

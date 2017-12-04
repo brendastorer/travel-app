@@ -1,6 +1,15 @@
 .form-container {
-  margin: 2rem auto;
-  max-width: 20rem;
+  background-color: $white;
+  margin: 0 auto;
+  max-width: 25rem;
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+.form-container__border {
+  background-color: rgba($white, 0.7);
+  margin: 0 auto;
+  max-width: 25rem;
+  padding: 10px;
 }
 
 .form-container__heading {

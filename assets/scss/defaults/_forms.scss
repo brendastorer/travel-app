@@ -16,32 +16,31 @@ legend {
 }
 
 label {
+  @include small-caps;
   display: block;
   font-weight: 400;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 input,
 select,
 textarea {
+  appearance: none;
+  background-color: $_form-background-color;
+  border-radius: $base-border-radius;
+  border: $base-border;
+  box-shadow: $_form-box-shadow;
+  box-sizing: border-box;
   display: block;
   font-family: $base-font-family;
   font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-input {
-  appearance: none;
-  background-color: $_form-background-color;
-  border: $base-border;
-  border-radius: $base-border-radius;
-  box-shadow: $_form-box-shadow;
-  box-sizing: border-box;
-  padding: 0.25rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
   transition: border-color $base-duration $base-timing;
   width: 100%;
 
   &[type="submit"] {
+    margin-bottom: 0;
     width: auto;
   }
 
@@ -65,7 +64,8 @@ input {
   }
 
   &::placeholder {
-    color: lighten($base-font-color, 40%);
+    color: lighten($base-font-color, 60%);
+    font-style: italic;
   }
 }
 
