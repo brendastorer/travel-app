@@ -20,6 +20,11 @@ const tripSchema = mongoose.Schema({
       calendarDate: Date,
       diaryEntry: String,
       travelDetails: String,
+      lodging: {
+        name: String,
+        address: String,
+        website: String
+      },
       locations: [
         {
           name: String,
@@ -27,8 +32,6 @@ const tripSchema = mongoose.Schema({
           sites: [
             {
               name: String,
-              address: String,
-              category: String,
               website: String
             }
           ]
@@ -36,6 +39,10 @@ const tripSchema = mongoose.Schema({
       ]
     }
   ]
+});
+
+tripSchema.virtual('tripLink').get(function(){
+  return `/trips/${this.id}`;
 });
 
 tripSchema.methods.apiRepr = function() {
@@ -46,7 +53,7 @@ tripSchema.methods.apiRepr = function() {
     description: this.description,
     startDate: this.startDate,
     endDate: this.endDate,
-    tripUrl: this.tripUrl,
+    tripUrl: this.tripLink,
     public: this.public,
     interests: this.interests,
     media: this.media,

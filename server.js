@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
+const moment = require('moment');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const passport = require('passport');
@@ -14,7 +15,25 @@ const {DATABASE_URL, PORT} = require('./config');
 
 const app = express();
 
-app.engine('handlebars', exphandlebars({defaultLayout: 'main'}));
+const handlebarsHelpers = exphandlebars.create({
+  defaultLayout: 'main',
+  helpers: {
+    formatFullDate: date => {
+      return moment(date).format('LL');
+    },
+    formatMonthDay: date => {
+      return moment(date).format('MMM D');
+    },
+    formatDayOfWeek: date => {
+      return moment(date).format('dddd');
+    },
+    formatUnix: date => {
+      return moment(date).format('X');
+    }
+  }
+});
+
+app.engine('handlebars', handlebarsHelpers.engine);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'handlebars');
 
@@ -48,6 +67,8 @@ passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
+
+// server
 let server;
 
 function runServer(databaseUrl=DATABASE_URL, port=PORT) {

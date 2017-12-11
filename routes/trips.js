@@ -21,10 +21,11 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   Trip
     .findById(req.params.id)
-    .then(trip => res.json(trip.apiRepr()))
-    .catch(err => {
-      console.error(err);
-      res.status(500).json({error: 'something went horribly awry'});
+    .then(trip => {
+      res.render('trip', {
+        user: req.user,
+        trip: trip
+      })
     });
 });
 

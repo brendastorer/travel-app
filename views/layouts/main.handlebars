@@ -5,8 +5,8 @@
     <meta name="description" content="A Personal Travel Planner and Diary">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/reset.css" rel="stylesheet" type="text/css" />
-    <link href="css/app.css" rel="stylesheet" type="text/css" />
+    <link href="../css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="../css/app.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <header class="site-header">
@@ -26,7 +26,7 @@
       </div>
       <div class="site-header__auth">
         {{#if user}}
-          Hello {{ user.username }}!
+          <a href="/add-trip">+ add new trip</a>
           <a href="/logout">Sign out</a>
         {{ else }}
           <a href="/register">Register</a> / <a href="/login">Login</a>
@@ -41,7 +41,6 @@
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous">    
     </script>
-    <script src="javascript/moment.js"></script>
-    <script src="javascript/app.min.js"></script>
+    <script src="../javascript/app.min.js"></script>
   </body>
 </html>

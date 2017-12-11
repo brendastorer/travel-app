@@ -1,4 +1,98 @@
-<header class="trip-header js-trip-header">
+<header class="trip-header">
+  <div class="trip-header__photo-container">
+    <img src="{{trip.media.0.file}}" alt="{{trip.media.0.caption}}" class="trip-header__photo">
+  </div>
+  <article class="trip-header__info">
+    <h2 class="heading--x-large">
+      {{trip.title}}
+    </h2>
+    <div class="user-profile">
+      <p class="user-profile__name">
+        Traveler: Brenda Storer, New York City
+      </p>
+    </div>
+    <p class="trip__description">
+      {{trip.description}}
+    </p>
+    <ul class="trips-list__interests">
+      {{#each trip.interests}}
+        <li class="tag">
+          {{this}}
+        </li>
+      {{/each}}
+    </ul>
+  </article>
 </header>
-<div class="js-trip-calendar trip-calendar"></div>
-<section class="js-trip-day trip-day"></section>
+
+<ol class="trip-calendar">
+  {{#each trip.days}}
+    <li class="trip-calendar__day">
+      <a href="#" class="trip-calendar__link js-trip-day-link {{#if @first}}is-active{{/if}}" data-day-link="{{formatUnix this.calendarDate}}">
+        <span class="heading--small-caps">
+          {{formatDayOfWeek this.calendarDate}}
+        </span>
+        <span class="trip-calendar__date">
+          {{formatMonthDay this.calendarDate}}
+        </span>
+      </a>
+    </li>
+  {{/each}}
+</ol>
+
+{{#each trip.days}}
+  <section class="trip-day js-trip-day {{#if @first}}is-shown{{/if}}" data-day-content="{{formatUnix this.calendarDate}}">
+
+    <aside class="trip-day__sidebar">
+
+      {{#if this.locations.0.name}}
+        <h3 class="heading--small-caps">
+          Places
+        </h3>
+        {{#each this.locations}}
+          <section class="trip-day__sidebar-section">
+            <h4 class="heading--medium">
+              {{this.name}}, {{this.country}}
+            </h4>
+            {{#if this.sites.0.name}}
+              {{#each this.sites}}
+                <a href="{{this.website}}" class="trip-day__link">
+                  {{this.name}}
+                </a>
+              {{/each}}
+            {{/if}}
+          </section>
+        {{/each}}
+      {{else}}
+        <em>There are no locations for this day.</em>
+      {{/if}}
+
+      {{#if this.lodging.name}}
+        <section class="trip-day__sidebar-section">
+          <h3 class="heading--small-caps">Lodging</h3>
+          <a href="{{this.lodging.website}}" class="trip-day__link">
+            {{this.lodging.name}}<br>
+            {{this.lodging.address}}
+          </a>
+        </section>
+      {{/if}}
+      {{#if this.travelDetails}}
+        <section class="trip-day__sidebar-section">
+          <h3 class="heading--small-caps">Travel Details</h3>
+          {{{this.travelDetails}}}
+        </section>
+      {{/if}}
+    </aside>
+    <article class="trip-day__diary">
+      {{#if this.diaryEntry}}
+        {{{this.diaryEntry}}}
+      {{else}}
+        <em>There is no entry for today.</em>
+      {{/if}}
+    </article>
+  </section>
+{{/each}}
+<div class="trip-slideshow">
+  {{#each trip.media}}
+    <img src="{{this.file}}" alt="{{this.caption}}" class="trip-slideshow__photo">
+  {{/each}}
+</div>

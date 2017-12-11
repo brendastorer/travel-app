@@ -1,19 +1,26 @@
 .trip-calendar {
   background-color: $off-white;
   display: grid;
-  grid-gap: 2px;
+  grid-gap: 4px;
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
 }
 
-.trip-calendar__day {
+.trip-calendar__link {
   background-color: $beige;
   border-bottom: 0;
   display: block;
-  padding: 0.5em;
+  padding: 0.75em 0.5em 0.5em;
+  z-index: 0;
 
-  &:hover {
+  &:hover,
+  &.is-active {
     background-color: $strong-accent-color;
+    color: $base-font-color;
+  }
+
+  &:focus {
+    z-index: 1;
   }
 }
 

@@ -56,8 +56,7 @@ describe('Accounts', function() {
         media: [],
         public: true,
         startDate: '2015-06-21T00:00:00.000Z',
-        title: 'My Trip to Italy', 
-        tripUrl: 'http://brendastorer.com'
+        title: 'My Trip to Italy'
       };
       return chai.request(app)
         .post('/trips')
@@ -66,9 +65,9 @@ describe('Accounts', function() {
           res.should.have.status(201);
           res.should.be.json;
           res.body.should.be.a('object');
-          res.body.should.include.keys('id', 'days', 'description', 'media', 'public', 'title', 'startDate', 'endDate');
+          res.body.should.include.keys('id', 'days', 'description', 'media', 'public', 'title', 'startDate', 'endDate', 'tripUrl');
           res.body.id.should.not.be.null;
-          res.body.should.deep.equal(Object.assign(newTrip, {id: res.body.id}));
+          res.body.should.deep.equal(Object.assign(newTrip, {id: res.body.id, tripUrl: res.body.tripUrl}));
         });
     });
 

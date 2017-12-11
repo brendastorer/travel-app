@@ -1,9 +1,13 @@
 .trip-day {
-  display: grid;
+  display: none;
   grid-gap: 1rem;
   grid-template-columns: 1fr 300px minmax(auto, 70ch) 1fr;
   margin-bottom: 2rem;
   margin-top: 2rem;
+
+  &.is-shown {
+    display: grid;
+  }
 }
 
 .trip-day__sidebar {
@@ -17,4 +21,19 @@
 .trip-day__diary {
   grid-column: 3 / 4;
   line-height: $base-line-height;
+}
+
+.trip-day__link {
+  border: $base-border;
+  border-radius: 1em;
+  display: inline-block;
+  line-height: $base-line-height;
+  margin-top: 0.5rem;
+  padding: 0.2em 0.8em 0.3em;
+
+  &:hover {
+    background-color: $strong-accent-color;
+    border-color: $strong-accent-color;
+    color: $base-font-color;
+  }
 }

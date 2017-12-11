@@ -1,4 +1,24 @@
-<a href="/add-trip" class="button">+ add new trip</a>
-<ul class="trips-list js-trips-list">
+<ul class="trips-list">
+  {{#each trips}}
+    <li class="trips-list__trip">
+      <a href="{{this.tripLink}}" class="trips-list__link">
+        <div class="trips-list__photo-container">
+          <img src="{{this.media.0.file}}" alt="{{this.media.0.caption}}" class="trips-list__photo">
+        </div>
+        <article class="trips-list__info">
+          <header class="trips-list__header">
+            <h2 class="heading--large">{{this.title}}</h2>
+          </header>
+          <p>{{formatFullDate startDate}} &ndash; {{formatFullDate endDate}}</p>
+          <p class="trips-list__description">{{this.description}}</p>
+          <ul class="trips-list__interests">
+            {{#each this.interests}}
+              <li class="tag">{{this}}</li>
+            {{/each}}
+          </ul>
+        </article>
+      </a>
+    </li>
+  {{/each}}
 </ul>
     
