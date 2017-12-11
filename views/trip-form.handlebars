@@ -1,31 +1,60 @@
-<section class="form-container">
-  <h1 class="form-container__heading">Add a new trip</h1>
+<section class="form-container js-add-trip-form">
+  <h1 class="form-container__heading">
+    Add a new trip
+  </h1>
   <form action="/trips" method="post" role="form">
     <div class="form-container__section">
-      <label for="title">Title *</label>
+      <label for="title">
+        Title *
+      </label>
       <input type="text" name="title" placeholder='e.g. "Australia 2017"'/>
     </div>
 
     <div class="form-container__section">
-      <label for="description">Description (maximum length 100 characters) *</label>
+      <label for="description">
+        Brief Description (maximum length 100 characters) *
+      </label>
       <textarea name="description" placeholder="Add a short description of your trip..." maxlength="100" /></textarea>
     </div>
 
-    <div class="form-container__section">
-      <label for="media[].file">Photos</label>
-      <input type="text" name="media[].file" placeholder='Add link to self hosted image file'/>
-      <a href="#" class="form-container__link js-add-media">+ add more</a>
-    </div>
+    <fieldset class="form-container__section">
+      <label for="startDate">
+        Start Date *
+      </label>
+      <input type="date" name="startDate">
+
+      <label for="startDate">
+        End Date *
+      </label>
+      <input type="date" name="endDate">
+    </fieldset>
     
-    <label for="interests[]">Interests</label>
-    <div class="form-container__section--two-across">
+    <fieldset class="form-container__section">
+      <label for="interests[]">
+        Interests (add at least one) *
+      </label>
       <input type="text" name="interests[]" placeholder='e.g. "hiking"' />
-      <input type="text" name="interests[]" placeholder='e.g. "museums"' />
-      <a href="#" class="form-container__link js-add-interests">+ add more</a>
-    </div>
+      <a href="#" class="form-container__link js-add-interests">
+        + add more
+      </a>
+    </fieldset>
+
+    <fieldset class="form-container__section">
+      <h2 class="form-container__subheading">
+        Add a cover photo
+      </h2>
+      <label for="media[0][file]">
+        Photo URL *
+      </label>
+      <input type="text" name="media[0][file]" placeholder='Add link to self hosted image file'/>
+      <label for="media[0][caption]">
+        Photo Caption
+      </label>
+      <input type="text" name="media[0][caption]" placeholder='Add a caption for this image'/>
+    </fieldset>
 
     <div class="form-container__actions">
-      <input type="submit" value="Submit"/>
+      <input type="submit" value="Next"/>
     </div>
   </form>
 </section>

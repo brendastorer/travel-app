@@ -17,20 +17,13 @@
   margin-bottom: 1rem;
 }
 
-.form-container__section {
-  margin-bottom: 1.5rem;
+.form-container__subheading {
+  @include heading--medium;
+  margin-bottom: 1rem;
 }
 
-.form-container__section--two-across {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.form-container__section {
   margin-bottom: 1.5rem;
-
-  input {
-    margin-bottom: 0.5rem;
-    width: 49%;
-  }
 }
 
 .form-container__link {
@@ -39,4 +32,22 @@
 
 .form-container__actions {
   margin-top: 2rem;
+}
+
+.form-container__added-field {
+  align-items: center;
+  display: flex;
+}
+
+.form-container__remove {
+  @include small-caps;
+  border-bottom: 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1;
+  margin: 0 0.75rem 0.5rem;
+
+  &:hover {
+    color: red;
+  }
 }

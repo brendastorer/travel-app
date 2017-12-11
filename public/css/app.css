@@ -253,17 +253,12 @@ em {
   font-size: 2em;
   margin-bottom: 1rem; }
 
+.form-container__subheading {
+  font-size: 1.5em;
+  margin-bottom: 1rem; }
+
 .form-container__section {
   margin-bottom: 1.5rem; }
-
-.form-container__section--two-across {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 1.5rem; }
-  .form-container__section--two-across input {
-    margin-bottom: 0.5rem;
-    width: 49%; }
 
 .form-container__link {
   font-family: "Lato", helvetica, sans-serif;
@@ -273,6 +268,23 @@ em {
 
 .form-container__actions {
   margin-top: 2rem; }
+
+.form-container__added-field {
+  align-items: center;
+  display: flex; }
+
+.form-container__remove {
+  font-family: "Lato", helvetica, sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1;
+  margin: 0 0.75rem 0.5rem; }
+  .form-container__remove:hover {
+    color: red; }
 
 .patterned-bg {
   background-color: #111;
@@ -319,7 +331,8 @@ em {
   display: inline-block;
   font-family: "Lato", helvetica, sans-serif;
   font-size: 0.65rem;
-  padding: 0.25em 0.8em 0.5em; }
+  padding: 0.25em 0.8em 0.5em;
+  text-transform: lowercase; }
 
 .trip-calendar {
   background-color: #f9f9f9;

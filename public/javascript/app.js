@@ -1,16 +1,12 @@
 $(document).ready(function () {
-  var interestsInput = "\n    <input type=\"text\" name=\"interests[]\" placeholder='e.g. \"hiking\"' />\n    <input type=\"text\" name=\"interests[]\" placeholder='e.g. \"museums\"' />\n  ";
-
-  var mediaInput = "\n    <input type=\"text\" name=\"media[].file\" placeholder='Add link to self hosted image file'/>\n  ";
+  $(document).on("click", ".js-remove-input", function (event) {
+    event.preventDefault();
+    $(this).closest(".form-container__added-field").remove();
+  });
 
   $(".js-add-interests").click(function (event) {
     event.preventDefault();
-    $(this).before(interestsInput);
-  });
-
-  $(".js-add-media").click(function (event) {
-    event.preventDefault();
-    $(this).before(mediaInput);
+    $(this).before("\n        <div class=\"form-container__added-field\">\n          <input type=\"text\" name=\"interests[]\" placeholder='e.g. \"hiking\"' />\n          <a href=\"#\" class=\"js-remove-input form-container__remove\">x</a>\n        </div>\n      ");
   });
 });
 $(document).ready(function () {
