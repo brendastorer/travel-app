@@ -56,11 +56,10 @@ router.get('/logout', (req, res, next) => {
 router.get('/add-trip',
   // require('connect-ensure-login').ensureLoggedIn(),
   function(req, res) {
-    res.render('trip-form', { user: req.user });
+    res.render('trip-form', {user: req.user});
 });
 
 router.get('/all-trips', (req, res) => {
-  // require('connect-ensure-login').ensureLoggedIn(),
   Trip
     .find()
     .then(trips => {
@@ -69,11 +68,6 @@ router.get('/all-trips', (req, res) => {
         trips: trips
       })
     });
-});
-
-router.get('/trip_static',
-  function(req, res) {
-    res.render('trip', { user: req.user });
 });
 
 module.exports = router;

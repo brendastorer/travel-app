@@ -3,12 +3,17 @@
     <img src="{{trip.media.0.file}}" alt="{{trip.media.0.caption}}" class="trip-header__photo">
   </div>
   <article class="trip-header__info">
-    <h2 class="heading--x-large">
-      {{trip.title}}
-    </h2>
+    <div>
+      <h2 class="trip-header__title">
+        {{trip.title}}
+      </h2>
+      {{#ifEqual trip.postedBy user.username}}
+        <a href="#" class="small-caps">edit trip</a>
+      {{/ifEqual}}
+    </div>
     <div class="user-profile">
       <p class="user-profile__name">
-        Traveler: Brenda Storer, New York City
+        Posted by: {{ trip.postedBy }}
       </p>
     </div>
     <p class="trip__description">
@@ -86,13 +91,8 @@
       {{#if this.diaryEntry}}
         {{{this.diaryEntry}}}
       {{else}}
-        <em>There is no entry for today.</em>
+        <em>There are no comments entered for this day.</em>
       {{/if}}
     </article>
   </section>
 {{/each}}
-<div class="trip-slideshow">
-  {{#each trip.media}}
-    <img src="{{this.file}}" alt="{{this.caption}}" class="trip-slideshow__photo">
-  {{/each}}
-</div>

@@ -22,29 +22,6 @@ p {
   margin: 0 0 0.5rem;
 }
 
-a {
-  border-bottom: 2px solid $strong-accent-color;
-  color: $base-font-color;
-  display: inline-block;
-  padding-bottom: 2px;
-  text-decoration: none;
-  transition: all $base-duration $base-timing;
-
-  &:hover {
-    border-bottom-color: transparent;
-    color: $strong-accent-color--darker;
-  }
-
-  &:focus {
-    outline: $focus-outline;
-    outline-offset: $focus-outline-offset;
-  }
-
-  img {
-    border-bottom: 0;
-  }
-}
-
 hr {
   border-bottom: $base-border;
   border-left: 0;

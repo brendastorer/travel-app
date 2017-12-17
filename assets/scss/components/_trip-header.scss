@@ -6,6 +6,12 @@
   }
 }
 
+.trip-header__title {
+  @include heading--x-large;
+  display: inline-block; 
+  margin-right: 0.5rem;
+}
+
 .trip-header__info {
   align-self: end;
   padding: 2rem;

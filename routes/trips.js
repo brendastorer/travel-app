@@ -22,10 +22,12 @@ router.get('/:id', (req, res) => {
   Trip
     .findById(req.params.id)
     .then(trip => {
-      res.render('trip', {
-        user: req.user,
-        trip: trip
-      })
+      res
+        .render('trip', {
+          trip: trip.apiRepr(),
+          user: req.user
+        })
+        .redirect('/:id/edit-locations');
     });
 });
 

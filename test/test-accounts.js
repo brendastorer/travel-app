@@ -49,7 +49,6 @@ describe('Accounts', function() {
   describe('Trips', function() {
     it('should add a trip on POST', function() {
       const newTrip = {
-        days: [],
         description: 'I will visit Italy in 2018!', 
         endDate: '2015-06-22T00:00:00.000Z',
         interests: ["music", "pasta", "coffee"],
@@ -67,7 +66,7 @@ describe('Accounts', function() {
           res.body.should.be.a('object');
           res.body.should.include.keys('id', 'days', 'description', 'media', 'public', 'title', 'startDate', 'endDate', 'tripUrl');
           res.body.id.should.not.be.null;
-          res.body.should.deep.equal(Object.assign(newTrip, {id: res.body.id, tripUrl: res.body.tripUrl}));
+          res.body.should.deep.equal(Object.assign(newTrip, {id: res.body.id, tripUrl: res.body.tripUrl, days: res.body.days}));
         });
     });
 

@@ -16,6 +16,12 @@
   display: block;
   margin-bottom: 0.5em; }
 
+.small-caps {
+  font-family: "Lato", helvetica, sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase; }
+
 button,
 [type="submit"],
 .button {
@@ -77,8 +83,11 @@ legend {
   padding: 0; }
 
 label {
+  font-family: "Lato", helvetica, sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   display: block;
-  font-weight: 400;
   margin-bottom: 0.5rem; }
 
 input,
@@ -93,7 +102,7 @@ textarea {
   display: block;
   font-family: "Arapey", georgia, serif;
   font-size: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   padding: 0.5rem;
   transition: border-color 150ms ease;
   width: 100%; }
@@ -133,7 +142,8 @@ textarea {
 [type="checkbox"],
 [type="radio"] {
   display: inline;
-  margin-right: 0.25rem; }
+  margin-right: 0.5rem;
+  width: auto; }
 
 [type="file"] {
   margin-bottom: 0.5rem;
@@ -164,6 +174,22 @@ html {
 
 body {
   margin: 0; }
+
+a {
+  border-bottom: 2px solid #a5d6d8;
+  color: #111;
+  display: inline-block;
+  padding-bottom: 2px;
+  text-decoration: none;
+  transition: all 150ms ease; }
+  a:hover {
+    border-bottom-color: transparent;
+    color: #459c9f; }
+  a:focus {
+    outline: 2px solid #a5d6d8;
+    outline-offset: 2px; }
+  a img {
+    border-bottom: 0; }
 
 ul,
 ol {
@@ -211,22 +237,6 @@ p {
   line-height: 1.4;
   margin: 0 0 0.5rem; }
 
-a {
-  border-bottom: 2px solid #a5d6d8;
-  color: #111;
-  display: inline-block;
-  padding-bottom: 2px;
-  text-decoration: none;
-  transition: all 150ms ease; }
-  a:hover {
-    border-bottom-color: transparent;
-    color: #459c9f; }
-  a:focus {
-    outline: 2px solid #a5d6d8;
-    outline-offset: 2px; }
-  a img {
-    border-bottom: 0; }
-
 hr {
   border-bottom: 1px solid #d6dad8;
   border-left: 0;
@@ -236,6 +246,10 @@ hr {
 
 em {
   font-style: italic; }
+
+.form-checkbox__label {
+  align-items: baseline;
+  display: flex; }
 
 .form-container {
   background-color: #fff;
@@ -363,6 +377,11 @@ em {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     height: 400px; } }
+
+.trip-header__title {
+  font-size: 2.5em;
+  display: inline-block;
+  margin-right: 0.5rem; }
 
 .trip-header__info {
   align-self: end;

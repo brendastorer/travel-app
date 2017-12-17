@@ -16,8 +16,8 @@ legend {
 }
 
 label {
+  @include small-caps;
   display: block;
-  font-weight: 400;
   margin-bottom: 0.5rem;
 }
 
@@ -33,7 +33,7 @@ textarea {
   display: block;
   font-family: $base-font-family;
   font-size: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   padding: 0.5rem;
   transition: border-color $base-duration $base-timing;
   width: 100%;
@@ -75,7 +75,8 @@ textarea {
 [type="checkbox"],
 [type="radio"] {
   display: inline;
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
+  width: auto;
 }
 
 [type="file"] {
