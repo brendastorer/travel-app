@@ -58,17 +58,17 @@
             <h4 class="heading--medium">
               {{this.name}}, {{this.country}}
             </h4>
-            {{#if this.sites.0.name}}
-              {{#each this.sites}}
-                <a href="{{this.website}}" class="trip-day__link">
-                  {{this.name}}
-                </a>
-              {{/each}}
-            {{/if}}
           </section>
         {{/each}}
       {{else}}
         <em>There are no locations for this day.</em>
+      {{/if}}
+    
+      {{#if this.travelDetails}}
+        <section class="trip-day__sidebar-section">
+          <h3 class="heading--small-caps">Travel Details</h3>
+          {{{this.travelDetails}}}
+        </section>
       {{/if}}
 
       {{#if this.lodging.name}}
@@ -80,11 +80,13 @@
           </a>
         </section>
       {{/if}}
-      {{#if this.travelDetails}}
-        <section class="trip-day__sidebar-section">
-          <h3 class="heading--small-caps">Travel Details</h3>
-          {{{this.travelDetails}}}
-        </section>
+
+      {{#if this.sites.0.name}}
+        {{#each this.sites}}
+          <a href="{{this.website}}" class="trip-day__link">
+            {{this.name}}
+          </a>
+        {{/each}}
       {{/if}}
     </aside>
     <article class="trip-day__diary">

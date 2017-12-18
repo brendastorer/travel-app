@@ -1,0 +1,40 @@
+<section class="form-container">
+  <h1 class="form-container__heading">
+    {{ trip.title }}
+  </h1>
+
+  <h1 class="form-container__subheading">
+    Add a location
+  </h1>
+
+  <form class="js-location-form" role="form">
+    <input type="hidden" value="{{ trip.id }}" class="js-trip-id">
+    <fieldset class="form-container__section">
+      <label for="city">
+        City
+      </label>
+      <input type="text" name="city" placeholder='e.g. "Melbourne"'/>
+      <label for="city">
+        Country
+      </label>
+      <input type="text" name="country" placeholder='e.g. "Australia"'/>
+      <h2 class="form-container__subheading">
+        Select all the days from your trip that you will be in this location:
+      </h2>
+      <div class="form-checkbox">
+        {{#each trip.days}}
+          <label class="form-checkbox__label" for="location-{{formatUnix this.calendarDate}}">
+            <input class="form-checkbox__checkbox" type="checkbox" value="{{formatUnix this.calendarDate}}" id="location-{{formatUnix this.calendarDate}}">
+            <span class="form-checkbox__item">
+              {{ formatFullDateWithDay this.calendarDate}}
+            </span>
+          </label>
+        {{/each}}
+      </div>
+    </fieldset>
+    <div class="form-container__actions">
+      <input type="submit" value="Add another location"/>
+      <input type="submit" value="Next"/>
+    </div>
+  </form>
+</section>

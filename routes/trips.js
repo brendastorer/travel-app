@@ -31,6 +31,17 @@ router.get('/:id', (req, res) => {
     });
 });
 
+router.get('/:id/edit-locations', (req, res) => {
+  Trip
+    .findById(req.params.id)
+    .then(trip => {
+      res.render('location-form', {
+        trip: trip.apiRepr(),
+        user: req.user
+      });
+  });
+});
+
 // create a new trip
 router.post('/', jsonParser, (req, res) => {
   const requiredFields = ['title', 'description'];
@@ -43,6 +54,36 @@ router.post('/', jsonParser, (req, res) => {
     }
   }
 
+  function createDays(startDate, endDate) {
+    const getDates = function(firstDate, lastDate) {
+      let dates = [],
+      addDays = function(days) {
+        let date = new Date(this.valueOf());
+        date.setDate(date.getDate() + days);
+        return date;
+      };
+      while (firstDate <= lastDate) {
+        dates.push(firstDate);
+        firstDate = addDays.call(firstDate, 1);
+      }
+      return dates;
+    };
+
+    const dates = getDates(new Date(startDate), new Date(endDate));                                                                                                             
+    const daysAsObjects = dates.map(function(date) {
+      return {
+        "calendarDate": date,
+        "diaryEntry": "",
+        "locations": [],
+        "lodging": {},
+        "sites": [],
+        "travelDetails": ""
+      };
+    });
+
+    return daysAsObjects;
+  };
+
   Trip
     .create({
       title: req.body.title,
@@ -54,7 +95,7 @@ router.post('/', jsonParser, (req, res) => {
       public: req.body.public,
       interests: req.body.interests,
       media: req.body.media,
-      days: req.body.days
+      days: createDays(req.body.startDate, req.body.endDate)
     })
     .then(trip => res.status(201).json(trip.apiRepr()))
     .catch(err => {
@@ -76,7 +117,6 @@ router.delete('/:id', (req, res) => {
     });
 });
 
-// update a trip
 router.put('/:id', jsonParser, (req, res) => {
   if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
     res.status(400).json({
@@ -92,10 +132,12 @@ router.put('/:id', jsonParser, (req, res) => {
     }
   });
 
-  Trip
-    .findByIdAndUpdate(req.params.id, {$set: updated}, {new: true})
-    .then(updatedTrip => res.status(204).end())
-    .catch(err => res.status(500).json({message: 'Something went wrong'}));
+  Trip.findById(req.params.id).then(updatedTrip => console.log(updatedTrip));
+
+  // Trip
+  //   .findByIdAndUpdate(req.params.id, updated, {new: true})
+  //   .then(updatedTrip => {res.status(204).end()})
+  //   .catch(err => res.status(500).json({message: 'Something went wrong'}));
 });
 
 

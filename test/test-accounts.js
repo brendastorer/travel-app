@@ -92,7 +92,6 @@ describe('Accounts', function() {
         public: false
       };
       return chai.request(app)
-        // first have to get so we have an idea of object to update
         .get('/trips')
         .then(function(res) {
           updateData.id = res.body[0].id;

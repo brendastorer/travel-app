@@ -21,6 +21,9 @@ const handlebarsHelpers = exphandlebars.create({
     formatFullDate: date => {
       return moment(date).format('LL');
     },
+    formatFullDateWithDay: date => {
+      return moment(date).format('ddd' + ', ' + ' ll');
+    },
     formatMonthDay: date => {
       return moment(date).format('MMM D');
     },
