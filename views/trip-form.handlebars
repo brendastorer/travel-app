@@ -3,7 +3,7 @@
     Add a new trip
   </h1>
   <form action="/trips" method="post" role="form">
-    <input type="hidden" name="postedBy" value="{{ user.username }}"/>
+    <input type="hidden" name="postedBy" value="{{user.username}}"/>
 
     <div class="form-container__section">
       <label for="title">

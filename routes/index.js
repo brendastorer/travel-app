@@ -23,7 +23,7 @@ router.post('/register', (req, res, next) => {
         if (err) {
           return next(err);
       }
-      res.redirect('/all-trips');
+      res.redirect('/trips');
       });
     });
   });
@@ -39,7 +39,7 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/login'
     if (err) {
         return next(err);
     }
-    res.redirect('/all-trips');
+    res.redirect('/trips');
     });
 });
 
@@ -57,17 +57,6 @@ router.get('/add-trip',
   // require('connect-ensure-login').ensureLoggedIn(),
   function(req, res) {
     res.render('trip-form', {user: req.user});
-});
-
-router.get('/all-trips', (req, res) => {
-  Trip
-    .find()
-    .then(trips => {
-      res.render('trips', { 
-        user: req.user,
-        trips: trips
-      })
-    });
 });
 
 module.exports = router;

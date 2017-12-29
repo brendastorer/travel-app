@@ -217,9 +217,11 @@ picture {
   width: 100%; }
 
 html {
+  font-size: 18px; }
+
+body {
   color: #111;
   font-family: "Arapey", georgia, serif;
-  font-size: 18px;
   line-height: 1.4; }
 
 h1,
@@ -340,7 +342,7 @@ em {
     margin: 0 0.25em; }
 
 .tag {
-  background-color: #e7d0ba;
+  background-color: #f1f1f1;
   border-radius: 1em;
   display: inline-block;
   font-family: "Lato", helvetica, sans-serif;
@@ -356,7 +358,7 @@ em {
   text-align: center; }
 
 .trip-calendar__link {
-  background-color: #f6ede8;
+  background-color: #f1f1f1;
   border-bottom: 0;
   display: block;
   padding: 0.75em 0.5em 0.5em;
@@ -409,17 +411,20 @@ em {
 .trip-day__sidebar-section {
   margin-bottom: 3rem; }
 
+.trip-day__sidebar-simple-content {
+  margin-top: 0.5rem; }
+
 .trip-day__diary {
   grid-column: 3 / 4;
   line-height: 1.4; }
 
 .trip-day__link {
-  border: 1px solid #d6dad8;
+  border: 2px solid #a5d6d8;
   border-radius: 1em;
   display: inline-block;
-  line-height: 1.4;
+  line-height: 1.2;
   margin-top: 0.5rem;
-  padding: 0.2em 0.8em 0.3em; }
+  padding: 0.2em 0.8em 0.25em; }
   .trip-day__link:hover {
     background-color: #a5d6d8;
     border-color: #a5d6d8;

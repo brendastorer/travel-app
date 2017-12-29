@@ -11,14 +11,13 @@ $heading-line-height: 1.2;
 // Colors
 $teal: #a5d6d8;
 $green: #d7eada;
-$beige: #f6ede8;
-$tan: #e7d0ba;
 $purple: #9a8194;
 $red: #da4455;
 $black: #111;
-$gray--light: #d6dad8;
 $white: #fff;
 $off-white: #f9f9f9;
+$gray--light: darken($off-white, 3%);
+$gray--medium: #d6dad8;
 
 // Font Colors
 $base-font-color: $black;
@@ -38,8 +37,9 @@ $site-header-height: 4.5rem;
 
 // Border
 $base-border-radius: 5px;
-$base-border-color: $gray--light;
+$base-border-color: $gray--medium;
 $base-border: 1px solid $base-border-color;
+$link-border: 2px solid $strong-accent-color;
 
 // Background Colors
 $viewport-background-color: #fff;

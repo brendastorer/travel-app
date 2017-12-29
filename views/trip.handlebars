@@ -7,13 +7,15 @@
       <h2 class="trip-header__title">
         {{trip.title}}
       </h2>
-      {{#ifEqual trip.postedBy user.username}}
-        <a href="#" class="small-caps">edit trip</a>
-      {{/ifEqual}}
+        <a href="/trips/edit-locations/{{trip.id}}" class="small-caps">
+          {{#ifEqual trip.postedBy user.username}}
+            edit trip
+          {{/ifEqual}}
+        </a>
     </div>
     <div class="user-profile">
       <p class="user-profile__name">
-        Posted by: {{ trip.postedBy }}
+        Posted by: {{trip.postedBy}}
       </p>
     </div>
     <p class="trip__description">
@@ -48,45 +50,49 @@
   <section class="trip-day js-trip-day {{#if @first}}is-shown{{/if}}" data-day-content="{{formatUnix this.calendarDate}}">
 
     <aside class="trip-day__sidebar">
-
-      {{#if this.locations.0.name}}
+      <section class="trip-day__sidebar-section">
         <h3 class="heading--small-caps">
-          Places
+          Locations
         </h3>
-        {{#each this.locations}}
-          <section class="trip-day__sidebar-section">
+        {{#if this.locations.0.name}}
+          {{#each this.locations}}
             <h4 class="heading--medium">
               {{this.name}}, {{this.country}}
             </h4>
-          </section>
-        {{/each}}
-      {{else}}
-        <em>There are no locations for this day.</em>
-      {{/if}}
+          {{/each}}
+        {{else}}
+          <em>There are no locations for this day.</em>
+        {{/if}}
+      </section>
     
       {{#if this.travelDetails}}
         <section class="trip-day__sidebar-section">
           <h3 class="heading--small-caps">Travel Details</h3>
-          {{{this.travelDetails}}}
+          <article class="trip-day__sidebar-simple-content">
+            {{{this.travelDetails}}}
+          </article>
         </section>
       {{/if}}
 
       {{#if this.lodging.name}}
         <section class="trip-day__sidebar-section">
           <h3 class="heading--small-caps">Lodging</h3>
-          <a href="{{this.lodging.website}}" class="trip-day__link">
+          <a href="{{this.lodging.website}}" rel="noopener" target="_blank" class="trip-day__link">
             {{this.lodging.name}}<br>
-            {{this.lodging.address}}
+            {{{this.lodging.address}}}
           </a>
         </section>
       {{/if}}
 
       {{#if this.sites.0.name}}
-        {{#each this.sites}}
-          <a href="{{this.website}}" class="trip-day__link">
-            {{this.name}}
-          </a>
-        {{/each}}
+        <section class="trip-day__sidebar-section">
+          <h3 class="heading--small-caps">Sites</h3>
+          {{#each this.sites}}
+            <a href="{{this.website}}" rel="noopener" target="_blank" class="trip-day__link">
+              {{this.name}}
+            </a>
+          {{/each}}
+        </section>
       {{/if}}
     </aside>
     <article class="trip-day__diary">

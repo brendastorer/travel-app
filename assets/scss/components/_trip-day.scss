@@ -18,18 +18,22 @@
   margin-bottom: 3rem;
 }
 
+.trip-day__sidebar-simple-content {
+  margin-top: 0.5rem;
+}
+
 .trip-day__diary {
   grid-column: 3 / 4;
   line-height: $base-line-height;
 }
 
 .trip-day__link {
-  border: $base-border;
+  border: $link-border;
   border-radius: 1em;
   display: inline-block;
-  line-height: $base-line-height;
+  line-height: 1.2;
   margin-top: 0.5rem;
-  padding: 0.2em 0.8em 0.3em;
+  padding: 0.2em 0.8em 0.25em;
 
   &:hover {
     background-color: $strong-accent-color;
