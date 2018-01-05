@@ -1,11 +1,13 @@
 <section class="form-container">
-  <h1 class="form-container__heading">
-    {{trip.title}}
-  </h1>
+  <header class="form-container__header">
+    <h1 class="form-container__heading">
+      {{trip.title}}
+    </h1>
+  </header>
 
-  <h1 class="form-container__subheading">
+  <h2 class="form-container__subheading">
     Add a location
-  </h1>
+  </h2>
 
   <form action="/trips/{{trip.id}}" role="form" method="post">
     <input type="hidden" name="id" value="{{trip.id}}"/>
@@ -23,8 +25,8 @@
       </h2>
       <div class="form-checkbox">
         {{#each trip.days}}
-          <label class="form-checkbox__label" for="{{formatUnix this.calendarDate}}">
-            <input class="form-checkbox__checkbox" name="{{formatUnix this.calendarDate}}" type="checkbox" id="{{formatUnix this.calendarDate}}">
+          <label class="form-checkbox__label" for="{{this.id}}">
+            <input class="form-checkbox__checkbox" name="{{this.id}}" type="checkbox" id="{{this.id}}">
             <span class="form-checkbox__item">
               {{ formatFullDateWithDay this.calendarDate}}
             </span>
@@ -33,8 +35,7 @@
       </div>
     </fieldset>
     <div class="form-container__actions">
-      <input type="submit" value="Add another location"/>
-      <input type="submit" value="Finish"/>
+      <input type="submit" value="Submit"/>
     </div>
   </form>
 </section>

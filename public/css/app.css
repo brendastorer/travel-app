@@ -265,12 +265,15 @@ em {
   max-width: 25rem;
   padding: 10px; }
 
+.form-container__header {
+  margin-bottom: 1.5rem; }
+
 .form-container__heading {
   font-size: 2em;
-  margin-bottom: 1rem; }
+  margin-bottom: 0; }
 
 .form-container__subheading {
-  font-size: 1.5em;
+  font-size: 1.25em;
   margin-bottom: 1rem; }
 
 .form-container__section {

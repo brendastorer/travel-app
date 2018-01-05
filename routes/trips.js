@@ -55,7 +55,7 @@ router.get('/edit-locations/:id', (req, res) => {
 
 router.post('/', jsonParser, (req, res) => {
   const requiredFields = ['title', 'description'];
-  for (let i=0; i<requiredFields.length; i++) {
+  for (let i = 0; i < requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
       const message = `Missing \`${field}\` in request body`
@@ -107,7 +107,7 @@ router.post('/', jsonParser, (req, res) => {
       media: req.body.media,
       days: createDays(req.body.startDate, req.body.endDate)
     })
-    .then(trip => res.status(201).json(trip.apiRepr()))
+    .then(trip => res.status(201).redirect(`trips/${trip.id}`))
     .catch(err => {
         console.error(err);
         res.status(500).json({error: 'Something went wrong'});
@@ -126,27 +126,7 @@ router.delete('/:id', (req, res) => {
     });
 });
 
-router.put('/:id', jsonParser, (req, res) => {
-  if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
-    res.status(400).json({
-      error: 'Request path id and request body id values must match'
-    });
-  }
-
-  const updated = {};
-  const updateableFields = ['title', 'description', 'startDate', 'endDate', 'public', 'interests', 'media', 'days'];
-  updateableFields.forEach(field => {
-    if (field in req.body) {
-      updated[field] = req.body[field];
-    }
-  });
-
-  Trip
-    .findByIdAndUpdate(req.params.id, updated, {new: true})
-    .then(updatedTrip => {res.status(204).end()})
-    .catch(err => res.status(500).json({message: 'Something went wrong'}));
-});
-
+// this could be a put, but is a post because it's for a request from an html form
 router.post('/:id', jsonParser, (req, res) => {
   if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
     res.status(400).json({
@@ -154,26 +134,36 @@ router.post('/:id', jsonParser, (req, res) => {
     });
   }
 
-  // const updated = {};
-  // const updateableFields = ['title', 'description', 'startDate', 'endDate', 'public', 'interests', 'media', 'days'];
-  // updateableFields.forEach(field => {
-  //   if (field in req.body) {
-  //     updated[field] = req.body[field];
-  //   }
-  // });
+  function getKeysWithValue(object, value) {
+    return Object.keys(object).filter(key => object[key] === value);
+  }
 
   Trip
     .findById(req.params.id)
-    .then(console.log(req.body))
+    .then(trip => {
+      const request = req.body;
+      const selectedDays = getKeysWithValue(request, "on");
+
+      for (let i = 0; i < trip.days.length; i++) {
+        const day = trip.days[i];
+
+        if (selectedDays.indexOf(day.id) >= 0) {
+          day.locations.push({
+            'name': request.city, 
+            'country': request.country
+          });
+        }
+      }
+
+      trip.save(err => {
+        console.error(err);
+        res.status(204).redirect(trip.id);
+      });
+    })
     .catch(err => {
         console.error(err);
         res.status(500).json({error: 'Something went wrong'});
     });
-
-  // Trip
-  //   .findByIdAndUpdate(req.params.id, updated, {new: true})
-  //   .then(updatedTrip => {res.status(204).end()})
-  //   .catch(err => res.status(500).json({message: 'Something went wrong'}));
 });
 
 module.exports = router;

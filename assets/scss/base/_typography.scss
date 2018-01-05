@@ -10,6 +10,10 @@
   font-size: 1.5em;
 }
 
+@mixin heading--small {
+  font-size: 1.25em;
+}
+
 @mixin small-caps {
   font-family: $alt-font-family;
   font-size: 0.65rem;

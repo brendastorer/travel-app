@@ -12,13 +12,17 @@
   padding: 10px;
 }
 
+.form-container__header {
+  margin-bottom: 1.5rem;
+}
+
 .form-container__heading {
   @include heading--large;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .form-container__subheading {
-  @include heading--medium;
+  @include heading--small;
   margin-bottom: 1rem;
 }
 

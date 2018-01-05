@@ -1,39 +1,42 @@
 <section class="form-container js-add-trip-form">
-  <h1 class="form-container__heading">
-    Add a new trip
-  </h1>
+  <header class="form-container__header">
+    <h1 class="form-container__heading">
+      Add a new trip
+    </h1>
+    <p><em>(all fields required)</em></p>
+  </header>
   <form action="/trips" method="post" role="form">
     <input type="hidden" name="postedBy" value="{{user.username}}"/>
 
     <div class="form-container__section">
       <label for="title">
-        Title *
+        Title
       </label>
       <input type="text" name="title" placeholder='e.g. "Australia 2017"'/>
     </div>
 
     <div class="form-container__section">
       <label for="description">
-        Brief Description (maximum length 100 characters) *
+        Brief Description (maximum length 100 characters)
       </label>
       <textarea name="description" placeholder="Add a short description of your trip..." maxlength="100" /></textarea>
     </div>
 
     <fieldset class="form-container__section">
       <label for="startDate">
-        Start Date *
+        Start Date
       </label>
       <input type="date" name="startDate">
 
       <label for="startDate">
-        End Date *
+        End Date
       </label>
       <input type="date" name="endDate">
     </fieldset>
     
     <fieldset class="form-container__section">
       <label for="interests[]">
-        Interests (add at least one) *
+        Interests (add at least one)
       </label>
       <input type="text" name="interests[]" placeholder='e.g. "hiking"' />
       <a href="#" class="form-container__link js-add-interests">
@@ -46,17 +49,17 @@
         Add a cover photo
       </h2>
       <label for="media[0][file]">
-        Photo URL *
+        Photo URL
       </label>
       <input type="text" name="media[0][file]" placeholder='Add link to self hosted image file'/>
       <label for="media[0][caption]">
-        Photo Caption
+        Photo Description
       </label>
-      <input type="text" name="media[0][caption]" placeholder='Add a caption for this image'/>
+      <input type="text" name="media[0][caption]" placeholder='Add a brief description of this image'/>
     </fieldset>
 
     <div class="form-container__actions">
-      <input type="submit" value="Next"/>
+      <input type="submit" value="Submit"/>
     </div>
   </form>
 </section>

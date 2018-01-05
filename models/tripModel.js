@@ -28,7 +28,7 @@ const tripSchema = mongoose.Schema({
       locations: [
         {
           name: String,
-          country: String,
+          country: String
         }
       ],
       sites: [

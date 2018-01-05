@@ -75,32 +75,12 @@ describe('Accounts', function() {
         .get('/trips')
         .then(function(res) {
           res.should.have.status(200);
-          res.should.be.json;
-          res.body.should.be.a('array');
-          res.body.length.should.be.at.least(1);
+          res.should.be.html;
           const expectedKeys = ['id', 'days', 'description', 'interests', 'media', 'public', 'title'];
           res.body.forEach(function(item) {
             item.should.be.a('object');
             item.should.include.keys(expectedKeys);
           });
-        });
-    });
-
-    it('should update items on PUT', function() {
-      const updateData = {
-        title: 'My Awesome Trip to Italy',
-        public: false
-      };
-      return chai.request(app)
-        .get('/trips')
-        .then(function(res) {
-          updateData.id = res.body[0].id;
-          return chai.request(app)
-            .put(`/trips/${updateData.id}`)
-            .send(updateData)
-        })
-        .then(function(res) {
-          res.should.have.status(204);
         });
     });
 
