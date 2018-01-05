@@ -40,7 +40,6 @@ describe('Accounts', function() {
     it('should find a user by username', (done) => {
       Account.findOne({ username: '12345' }, (err, account) => {
         account.username.should.eql('12345');
-        console.log("   username: ", account.username);
         done();
       });
     });
@@ -61,13 +60,31 @@ describe('Accounts', function() {
         .post('/trips')
         .send(newTrip)
         .then(function(res) {
-          res.should.have.status(201);
-          res.should.be.json;
-          res.body.should.be.a('object');
-          res.body.should.include.keys('id', 'days', 'description', 'media', 'public', 'title', 'startDate', 'endDate', 'tripUrl');
-          res.body.id.should.not.be.null;
-          res.body.should.deep.equal(Object.assign(newTrip, {id: res.body.id, tripUrl: res.body.tripUrl, days: res.body.days}));
+          res.should.be.html;
+          res.should.redirect;
         });
+    });
+
+    it('should add a location to an existing trip', function() {
+      return chai.request(app)
+        .get('/trips/json')
+        .then(function(res) {
+          const firstTrip = res.body[0].id;
+          const firstDayofTrip = res.body[0].days[0].id;
+          const newLocation = {
+            id: firstTrip,
+            city: "Florence",
+            country: "Italy",
+            firstDayofTrip: "on"
+          };
+          return chai.request(app)
+            .post(`/trips/${firstTrip}`)
+            .send(newLocation)
+            .then(function(res) {
+              res.should.be.html;
+              res.should.redirect;
+            });
+      });
     });
 
     it('should list trips on GET', function() {
@@ -76,20 +93,17 @@ describe('Accounts', function() {
         .then(function(res) {
           res.should.have.status(200);
           res.should.be.html;
-          const expectedKeys = ['id', 'days', 'description', 'interests', 'media', 'public', 'title'];
-          res.body.forEach(function(item) {
-            item.should.be.a('object');
-            item.should.include.keys(expectedKeys);
-          });
         });
     });
 
+
     it('should delete trips on DELETE', function() {
       return chai.request(app)
-        .get('/trips')
+        .get('/trips/json')
         .then(function(res) {
+          const firstTrip = res.body[0].id;
           return chai.request(app)
-            .delete(`/trips/${res.body[0].id}`);
+            .delete(`/trips/${firstTrip}`);
         })
         .then(function(res) {
           res.should.have.status(204);

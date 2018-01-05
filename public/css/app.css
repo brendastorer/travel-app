@@ -345,7 +345,7 @@ em {
     margin: 0 0.25em; }
 
 .tag {
-  background-color: #f1f1f1;
+  background-color: #f6ede8;
   border-radius: 1em;
   display: inline-block;
   font-family: "Lato", helvetica, sans-serif;
@@ -361,7 +361,7 @@ em {
   text-align: center; }
 
 .trip-calendar__link {
-  background-color: #f1f1f1;
+  background-color: #f6ede8;
   border-bottom: 0;
   display: block;
   padding: 0.75em 0.5em 0.5em;
