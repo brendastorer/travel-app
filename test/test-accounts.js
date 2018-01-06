@@ -65,6 +65,15 @@ describe('Accounts', function() {
         });
     });
 
+    it('should list trips on GET', function() {
+      return chai.request(app)
+        .get('/trips')
+        .then(function(res) {
+          res.should.have.status(200);
+          res.should.be.html;
+        });
+    });
+
     it('should add a location to an existing trip', function() {
       return chai.request(app)
         .get('/trips/json')
@@ -87,15 +96,23 @@ describe('Accounts', function() {
       });
     });
 
-    it('should list trips on GET', function() {
+    it('should update items on PUT', function() {
+      const updateData = {
+        title: 'My Awesome Trip to Italy',
+        public: false
+      };
       return chai.request(app)
-        .get('/trips')
+        .get('/trips/json')
         .then(function(res) {
-          res.should.have.status(200);
-          res.should.be.html;
+          updateData.id = res.body[0].id;
+          return chai.request(app)
+            .put(`/trips/${updateData.id}`)
+            .send(updateData)
+        })
+        .then(function(res) {
+          res.should.have.status(204);
         });
     });
-
 
     it('should delete trips on DELETE', function() {
       return chai.request(app)

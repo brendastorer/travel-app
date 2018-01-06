@@ -5,7 +5,7 @@ const jsonParser = bodyParser.json();
 
 const {Trip} = require('../models/tripModel');
 
-// Show trips as json while app is in development
+// Show trips as json for testing
 router.get('/json', (req, res) => {
   Trip
     .find()
@@ -164,6 +164,27 @@ router.post('/:id', jsonParser, (req, res) => {
         console.error(err);
         res.status(500).json({error: 'Something went wrong'});
     });
+});
+
+router.put('/:id', jsonParser, (req, res) => {
+  if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
+    res.status(400).json({
+      error: 'Request path id and request body id values must match'
+    });
+  }
+
+  const updated = {};
+  const updateableFields = ['title', 'description', 'startDate', 'endDate', 'public', 'interests', 'media', 'days'];
+  updateableFields.forEach(field => {
+    if (field in req.body) {
+      updated[field] = req.body[field];
+    }
+  });
+
+  Trip
+    .findByIdAndUpdate(req.params.id, updated, {new: true})
+    .then(updatedTrip => {res.status(204).end()})
+    .catch(err => res.status(500).json({message: 'Something went wrong'}));
 });
 
 module.exports = router;
