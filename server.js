@@ -28,7 +28,7 @@ const handlebarsHelpers = exphandlebars.create({
       return moment(date).format('MMM D');
     },
     formatDayOfWeek: date => {
-      return moment(date).format('dddd');
+      return moment(date).format('ddd');
     },
     formatUnix: date => {
       return moment(date).format('X');

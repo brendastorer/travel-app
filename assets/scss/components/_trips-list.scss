@@ -1,14 +1,15 @@
-$_trips-list-row-height: 400px;
+$_trips-list-row-height-taller: 400px;
+$_trips-list-row-height-shorter: 250px;
 
 .trips-list {
   font-size: $small-font-size;
   list-style-type: none;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 
   @media (min-width: $large-screen-and-up) {
     display: grid;
-    grid-gap: 2rem;
+    grid-gap: 1.5rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -20,7 +21,7 @@ $_trips-list-row-height: 400px;
   position: relative;
 
   @media (max-width: $large-screen-and-up) {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   &:hover {
@@ -29,12 +30,20 @@ $_trips-list-row-height: 400px;
 }
 
 .trips-list__photo-container {
-  height: $_trips-list-row-height;
+  height: $_trips-list-row-height-shorter;
+
+  @media (min-width: $medium-screen-and-up) {
+    height: $_trips-list-row-height-taller;
+  }
 }
 
 .trips-list__photo {
-  height: $_trips-list-row-height;
+  height: $_trips-list-row-height-shorter;
   object-fit: cover;
+
+  @media (min-width: $medium-screen-and-up) {
+    height: $_trips-list-row-height-taller;
+  }
 }
 
 .trips-list__title {

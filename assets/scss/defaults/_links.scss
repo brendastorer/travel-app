@@ -2,6 +2,7 @@ a {
   border-bottom: 2px solid $strong-accent-color;
   color: $base-font-color;
   display: inline-block;
+  fill: currentColor;
   padding-bottom: 2px;
   text-decoration: none;
   transition: all $base-duration $base-timing;
@@ -11,6 +12,7 @@ a {
     color: $strong-accent-color--darker;
   }
 
+  &:active,
   &:focus {
     outline: $focus-outline;
     outline-offset: $focus-outline-offset;

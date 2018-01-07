@@ -1,12 +1,15 @@
 .trip-day {
   display: none;
-  grid-gap: 1rem;
-  grid-template-columns: 1fr 300px minmax(auto, 70ch) 1fr;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin: 1.5rem;
 
   &.is-shown {
-    display: grid;
+    display: block;
+
+    @media (min-width: $large-screen-and-up) {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: 1fr 300px minmax(auto, 70ch) 1fr;
+    }
   }
 }
 
@@ -15,7 +18,7 @@
 }
 
 .trip-day__sidebar-section {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .trip-day__sidebar-simple-content {

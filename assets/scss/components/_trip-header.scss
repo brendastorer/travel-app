@@ -1,8 +1,10 @@
+$_trip-header-height: 60vh;
+
 .trip-header {
   @media (min-width: $large-screen-and-up) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    height: $trip-header-height;
+    height: $_trip-header-height;
   }
 }
 
@@ -14,14 +16,14 @@
 
 .trip-header__info {
   align-self: end;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .trip-header__photo-container {
-  height: $trip-header-height;
+  height: $_trip-header-height;
 }
 
 .trip-header__photo {
-  height: $trip-header-height;
+  height: $_trip-header-height;
   object-fit: cover;
 }
