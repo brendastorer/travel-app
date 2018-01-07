@@ -1,12 +1,17 @@
+[![Build Status](https://travis-ci.org/brendastorer/travel-app.svg?branch=master)](https://travis-ci.org/brendastorer/travel-app)
+
 # HELE travel planner & diary
 
-A Node/Express app.
+HELE is a Node/Express app where you can log the details of upcoming travel to share with others, and then optionally use that log as a travel diary during your trip.
 
 ## Setup
 
 * Clone the repo from GitHub
-* run npm install (make sure you also have any dev dependencies listed in `package.json` globally installed)
-* start your local server by running `npm run start-local-server` in your terminal
+* run npm install
+* start your local server by running `npm run start-server` in your terminal
+
+## Tests
+* Run the test suite locally with `npm test`
 
 ## Sass Architecture
 
@@ -17,12 +22,19 @@ A Node/Express app.
   **Components** are specific patterns of modular styles for features across the site.  
 
 ## Technologies and Libraries
+
 * Node.js & Express
-* Gulp
-* Sass/SCSS
-* Babel
-* Passport.js
+* Travis CI
 * Mocha & Chai
 * jQuery
 * Handlebars
+* Passport.js
 * Moment.js
+* Gulp
+* Sass/SCSS
+* Babel
+* Autoprefixer
+
+## Upcoming Features
+
+Product features and development are managed through this [Trello board](https://trello.com/b/9sS31quu/travel-app)

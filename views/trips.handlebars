@@ -9,6 +9,9 @@
           <header class="trips-list__header">
             <h2 class="heading--large">{{this.title}}</h2>
           </header>
+          <p>
+            Posted by: {{this.postedBy}}
+          </p>
           <p>{{formatFullDate startDate}} &ndash; {{formatFullDate endDate}}</p>
           <p class="trips-list__description">{{this.description}}</p>
           <ul class="trips-list__interests">
