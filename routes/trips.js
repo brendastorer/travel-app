@@ -42,15 +42,17 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.get('/edit-locations/:id', (req, res) => {
-  Trip
-    .findById(req.params.id)
-    .then(trip => {
-      res.render('location-form', {
-        trip: trip.apiRepr(),
-        user: req.user
-      });
-  });
+router.get('/edit-locations/:id', 
+  require('connect-ensure-login').ensureLoggedIn(),
+  function(req, res) {
+    Trip
+      .findById(req.params.id)
+      .then(trip => {
+        res.render('location-form', {
+          trip: trip.apiRepr(),
+          user: req.user
+        });
+    });
 });
 
 router.post('/', jsonParser, (req, res) => {

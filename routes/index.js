@@ -54,7 +54,7 @@ router.get('/logout', (req, res, next) => {
 });
 
 router.get('/add-trip',
-  // require('connect-ensure-login').ensureLoggedIn(),
+  require('connect-ensure-login').ensureLoggedIn(),
   function(req, res) {
     res.render('trip-form', {user: req.user});
 });
