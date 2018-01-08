@@ -6,6 +6,7 @@ body {
   color: $base-font-color;
   font-family: $base-font-family;
   line-height: $base-line-height;
+  text-rendering: optimizeLegibility;
 }
 
 h1,

@@ -31,6 +31,8 @@ $_site-header-mobile-breakpoint: 750px;
 .site-header__title {
   font-family: $handwritten-font-family;
   font-size: 1.65rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   
   @media(min-width: $_site-header-mobile-breakpoint) {
     display: inline-block;
