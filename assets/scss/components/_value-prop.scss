@@ -1,0 +1,48 @@
+.value-prop {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.value-prop__list {
+  margin: 0 auto;
+
+  @media (min-width: $large-screen-and-up) {
+    max-width: 100em;
+
+    @supports (display: grid) {
+      display: grid;
+      grid-gap: 3rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.value-prop__item {
+  padding-bottom: 2rem;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  @media (min-width: $large-screen-and-up) {
+    padding: 0 0.5rem;
+    float: left;
+    width: 33.33%;
+
+    @supports (display: grid) {
+      padding: 0;
+      float: none;
+      width: auto;
+    }
+  }
+}
+
+.value-prop__item-title {
+  @include heading--medium;
+  margin-bottom: 0.5rem;
+}
+
+.value-prop__item-image {
+  height: 100px;
+  width: auto;
+}
