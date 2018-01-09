@@ -533,6 +533,8 @@ em {
   padding: 1.5rem; }
 
 .trip-header__photo-container {
+  background-color: #111;
+  background-image: url("../images/palms-bg.png");
   height: 60vh; }
 
 .trip-header__photo {
@@ -599,6 +601,8 @@ em {
     color: #111; }
 
 .trips-list__photo-container {
+  background-color: #111;
+  background-image: url("../images/palms-bg.png");
   height: 250px; }
   @media (min-width: 500px) {
     .trips-list__photo-container {

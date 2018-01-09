@@ -30,6 +30,8 @@ $_trips-list-row-height-shorter: 250px;
 }
 
 .trips-list__photo-container {
+  background-color: $black;
+  background-image: url("../images/palms-bg.png");
   height: $_trips-list-row-height-shorter;
 
   @media (min-width: $medium-screen-and-up) {

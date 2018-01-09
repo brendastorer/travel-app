@@ -20,6 +20,8 @@ $_trip-header-height: 60vh;
 }
 
 .trip-header__photo-container {
+  background-color: $black;
+  background-image: url("../images/palms-bg.png");
   height: $_trip-header-height;
 }
 

@@ -4,11 +4,19 @@
 
 HELE is a Node/Express app where you can log the details of upcoming travel to share with others, and then optionally use that log as a travel diary during your trip.
 
+![alt text](https://vast-brook-44418.herokuapp.com/images/trip-list.jpg "Screenshot of a list of trips")
+
+![alt text](https://vast-brook-44418.herokuapp.com/images/trip-page.jpg "Screenshot of an individual trip")
+
+
 ## Setup
 
 * Clone the repo from GitHub
-* run npm install
-* start your local server by running `npm run start-server` in your terminal
+* Run `npm install`
+* Start a local server by running `npm run start-server` in your terminal
+* In a different terminal window, run a mongo instance with `mongod`
+
+To host on heroku, you must include a Procfile at the root of the app.
 
 ## Tests
 * Run the test suite locally with `npm test`
@@ -23,7 +31,8 @@ HELE is a Node/Express app where you can log the details of upcoming travel to s
 
 ## Technologies and Libraries
 
-* Node.js & Express
+* Node.js/Express/Mongo
+* Mongoose
 * Travis CI
 * Mocha & Chai
 * jQuery
