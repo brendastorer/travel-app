@@ -4,9 +4,9 @@
 
 HELE is a Node/Express app where you can log the details of upcoming travel to share with others, and then optionally use that log as a travel diary during your trip.
 
-![alt text](https://vast-brook-44418.herokuapp.com/images/trip-list.jpg "Screenshot of a list of trips")
+![Hele travel planner & diary](https://vast-brook-44418.herokuapp.com/images/hele-banner.png)
 
-![alt text](https://vast-brook-44418.herokuapp.com/images/trip-page.jpg "Screenshot of an individual trip")
+![Screenshot of an individual trip page](https://vast-brook-44418.herokuapp.com/images/trip-page.png)
 
 
 ## Setup

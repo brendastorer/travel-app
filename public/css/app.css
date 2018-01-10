@@ -99,9 +99,6 @@ label {
 input,
 select,
 textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   background-color: #fff;
   border-radius: 5px;
   border: 1px solid #d6dad8;
@@ -360,7 +357,7 @@ em {
   background-image: url("/images/hero-1.jpg");
   background-position: center;
   background-size: cover;
-  height: calc(90vh - 4.5rem);
+  height: calc(90vh - 4.75rem);
   position: relative;
   width: 100%; }
 
@@ -398,54 +395,32 @@ em {
   background-image: url("../images/palms-bg.png");
   background-size: cover;
   padding: 4rem 0 1rem;
-  height: calc(100vh - 4.5rem);
+  height: calc(100vh - 4.75rem);
   width: 100%; }
 
 .site-header {
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 1rem 1.5rem 0;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between; }
-  @media (min-width: 750px) {
-    .site-header {
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      height: 4.5rem;
-      margin-top: 0; } }
-
-@media (min-width: 750px) {
-  .site-header__logo-and-title {
-    margin-top: 2.25rem; } }
-
-.site-header__logo-and-title a {
-  border-bottom: 0; }
+  justify-content: space-between;
+  height: 4.75rem;
+  margin: 0 1.5rem; }
 
 .site-header__logo {
-  fill: #111; }
-
-.site-header__title {
-  font-family: "Madelyn-Regular", georgia, serif;
-  font-size: 1.65rem;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased; }
-  @media (min-width: 750px) {
-    .site-header__title {
-      display: inline-block;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      margin-left: 1rem; } }
+  border-bottom: 0;
+  line-height: 1;
+  padding-bottom: 0; }
 
 .site-header__mobile-nav-toggle {
   border-bottom: 0;
   line-height: 1;
+  margin-left: 2rem;
   padding-bottom: 0; }
   @media (min-width: 750px) {
     .site-header__mobile-nav-toggle {
@@ -463,11 +438,11 @@ em {
   .site-header__nav.is-active {
     background-color: white;
     display: block;
-    padding: 0 1.5rem;
+    padding: 0.5rem 1.5rem 0;
     position: absolute;
     right: 0;
     text-align: right;
-    top: 95px;
+    top: 4.75rem;
     z-index: 100; }
 
 .site-header__nav-item {
