@@ -4,9 +4,9 @@
 
 HELE is a Node/Express app where you can log the details of upcoming travel to share with others, and then optionally use that log as a travel diary during your trip.
 
-![Hele travel planner & diary](https://vast-brook-44418.herokuapp.com/images/hele-banner.png)
+![Hele travel planner & diary](http://brendastorer.com/hosted-images/hele-banner.png)
 
-![Screenshot of an individual trip page](https://vast-brook-44418.herokuapp.com/images/trip-page.png)
+![Screenshot of an individual trip page](http://brendastorer.com/hosted-images/trip-page.png)
 
 
 ## Setup
@@ -23,7 +23,7 @@ To host on heroku, you must include a Procfile at the root of the app.
 
 ## Sass Architecture
 
-  **Base** is the first imported , and where global variables and mixins should be placed.
+  **Base** is the first imported and where global variables and mixins should be placed.
 
   **Defaults** are base styles on html elements.
 
