@@ -39,6 +39,7 @@ $site-header-height: 4.75rem;
 $base-border-radius: 5px;
 $base-border-color: $gray--medium;
 $base-border: 1px solid $base-border-color;
+$light-border: 1px solid lighten($base-border-color, 8%);
 $link-border: 2px solid $strong-accent-color;
 
 // Background Colors

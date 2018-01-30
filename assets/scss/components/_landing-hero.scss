@@ -39,4 +39,8 @@
 
 .landing-hero__button {
   margin-top: 0.5rem;
+
+  &.primary {
+    background-color: $strong-accent-color;
+  }
 }
