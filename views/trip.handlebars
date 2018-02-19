@@ -29,10 +29,10 @@
   </article>
 </header>
 
-<ol class="trip-calendar">
+<ol class="trip-calendar" id="calendar">
   {{#each trip.days}}
     <li class="trip-calendar__day">
-      <a href="#" class="trip-calendar__link js-trip-day-link {{#if @first}}is-active{{/if}}" data-day-link="{{formatUnix this.calendarDate}}">
+      <a href="#calendar" class="trip-calendar__link js-trip-day-link {{#if @first}}is-active{{/if}}" data-day-link="{{formatUnix this.calendarDate}}">
         <span class="heading--small-caps">
           {{formatDayOfWeek this.calendarDate}}
         </span>

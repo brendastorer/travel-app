@@ -15,8 +15,7 @@ $(document).ready(function () {
   });
 });
 $(document).ready(function () {
-  $(".js-trip-day-link").click(function (event) {
-    event.preventDefault();
+  $(".js-trip-day-link").click(function () {
     var date = $(this).data("day-link");
     var dateContent = $("[data-day-content='" + date + "']");
 

@@ -1,6 +1,5 @@
 $(document).ready(function() {
-  $(".js-trip-day-link").click(function(event) {
-    event.preventDefault();
+  $(".js-trip-day-link").click(function() {
     const date = $(this).data("day-link");
     const dateContent = $(`[data-day-content='${date}']`);
 
