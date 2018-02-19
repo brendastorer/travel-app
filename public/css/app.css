@@ -14,7 +14,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   display: block;
-  margin-bottom: 0.5em; }
+  margin-bottom: 0.25em; }
 
 .small-caps {
   font-family: "Lato", helvetica, sans-serif;
@@ -477,12 +477,11 @@ em {
   border-bottom: 0;
   display: block;
   font-size: 0.7em;
-  padding: 0.5em 0.5em 0.25em;
+  padding: 0.4em 0.5em 0.15em;
   z-index: 0; }
   @media (min-width: 900px) {
     .trip-calendar__link {
-      font-size: 1em;
-      padding: 0.75em 0.5em 0.5em; } }
+      font-size: 1em; } }
   .trip-calendar__link:hover, .trip-calendar__link.is-active {
     background-color: #a5d6d8;
     color: #111; }
@@ -492,13 +491,13 @@ em {
 .trip-calendar__date {
   display: block;
   font-size: 1.3em;
-  margin-bottom: 0.25em; }
+  margin-bottom: 0.15em; }
 
 @media (min-width: 900px) {
   .trip-header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    height: 60vh; } }
+    height: 55vh; } }
 
 .trip-header__title {
   font-size: 2.5em;
@@ -513,10 +512,10 @@ em {
 .trip-header__photo-container {
   background-color: #111;
   background-image: url("../images/palms-bg.png");
-  height: 60vh; }
+  height: 55vh; }
 
 .trip-header__photo {
-  height: 60vh;
+  height: 55vh;
   -o-object-fit: cover;
   object-fit: cover; }
 
