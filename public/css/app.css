@@ -528,8 +528,8 @@ em {
     @media (min-width: 900px) {
       .trip-day.is-shown {
         display: grid;
-        grid-gap: 1rem;
-        grid-template-columns: 1fr 300px minmax(auto, 70ch) 1fr; } }
+        grid-gap: 3rem;
+        grid-template-columns: 1fr 275px minmax(auto, 70ch) 1fr; } }
 
 .trip-day__sidebar {
   grid-column: 2 / 3; }
