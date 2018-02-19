@@ -75,10 +75,15 @@
       {{#if this.lodging.name}}
         <section class="trip-day__sidebar-section">
           <h3 class="heading--small-caps">Lodging</h3>
-          <a href="{{this.lodging.website}}" rel="noopener" target="_blank" class="trip-day__link">
-            {{this.lodging.name}}<br>
-            {{{this.lodging.address}}}
-          </a>
+            {{#if this.lodging.website}}
+              <a href="{{this.lodging.website}}" rel="noopener" target="_blank" class="trip-day__link">
+                {{this.lodging.name}}<br>
+                {{{this.lodging.address}}}
+              </a>
+            {{else}}
+              {{this.lodging.name}}<br>
+              {{{this.lodging.address}}}
+            {{/if}}
         </section>
       {{/if}}
 

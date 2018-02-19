@@ -521,7 +521,8 @@ em {
 
 .trip-day {
   display: none;
-  margin: 1.5rem; }
+  margin: 1.5rem;
+  min-height: 50vh; }
   .trip-day.is-shown {
     display: block; }
     @media (min-width: 900px) {

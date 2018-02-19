@@ -1,6 +1,7 @@
 .trip-day {
   display: none;
   margin: 1.5rem;
+  min-height: 50vh;
 
   &.is-shown {
     display: block;
